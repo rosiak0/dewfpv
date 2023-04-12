@@ -1,5 +1,8 @@
 import Link from "next/link";
 
+import { motion } from "framer-motion";
+import { usePathname } from "next/navigation";
+
 import { BsFacebook, BsInstagram, BsYoutube } from "react-icons/bs";
 
 const links = [
@@ -10,14 +13,24 @@ const links = [
 ];
 
 const Navbar = () => {
+  const path = usePathname();
+
   return (
-    <nav className="fixed w-full">
-      <div className="w-full lg:w-3/5 lg:mx-auto mx-3">
+    <nav className="fixed w-full shadow-lg">
+      <div className="w-full lg:w-3/5 lg:mx-auto mx-3 py-4 ">
         <ul className="flex justify-between">
           {links.map((link) => (
-            <li className="hover:underline" key={link.href}>
+            <li
+              className="hover:font-bold hover:duration-100 w-40"
+              key={link.href}
+            >
               <div>
-                <Link href={link.href}>{link.text}</Link>
+                <Link
+                  className={`${link.href === path ? "font-bold" : ""} `}
+                  href={link.href}
+                >
+                  {link.text}
+                </Link>
               </div>
             </li>
           ))}

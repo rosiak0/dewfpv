@@ -1,12 +1,13 @@
 import PageWrapper from "../components/PageWrapper";
+import TextWrapper from "../components/TextWrapper";
 
 const Contact = () => {
   return (
     <PageWrapper>
-      <div id="contact" className="h-screen pt-6">
+      <TextWrapper>
         <h1>Contact</h1>
         <form></form>
-      </div>
+      </TextWrapper>
     </PageWrapper>
   );
 };

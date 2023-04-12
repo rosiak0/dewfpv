@@ -1,11 +1,12 @@
 import PageWrapper from "../components/PageWrapper";
+import TextWrapper from "../components/TextWrapper";
 
 const Projects = () => {
   return (
     <PageWrapper>
-      <div id="projects" className="h-screen pt-6">
+      <TextWrapper>
         <h1>Projects</h1>
-      </div>
+      </TextWrapper>
     </PageWrapper>
   );
 };
