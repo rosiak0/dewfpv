@@ -1,5 +1,5 @@
-import PageWrapper from "../components/PageWrapper";
-import TextWrapper from "../components/TextWrapper";
+import PageWrapper from "../../components/PageWrapper";
+import TextWrapper from "../../components/TextWrapper";
 
 const Services = () => {
   return (

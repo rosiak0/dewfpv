@@ -1,6 +1,5 @@
 import Link from "next/link";
 
-import { motion } from "framer-motion";
 import { usePathname } from "next/navigation";
 
 import { BsFacebook, BsInstagram, BsYoutube } from "react-icons/bs";
@@ -12,7 +11,7 @@ const links = [
   { href: "/contact", text: "Contact" },
 ];
 
-const Navbar = () => {
+const NavbarDesktop = () => {
   const path = usePathname();
 
   return (
@@ -21,7 +20,7 @@ const Navbar = () => {
         <ul className="flex justify-between">
           {links.map((link) => (
             <li
-              className="hover:font-bold hover:duration-100 w-40"
+              className="hover:font-bold hover:duration-100 w-40 mx-1"
               key={link.href}
             >
               <div>
@@ -58,4 +57,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default NavbarDesktop;
