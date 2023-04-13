@@ -1,11 +1,12 @@
 import PageWrapper from "../../components/PageWrapper";
 import TextWrapper from "../../components/TextWrapper";
+import PageTitle from "../../components/PageTitle";
 
 const Services = () => {
   return (
     <PageWrapper>
       <TextWrapper>
-        <h1>Services</h1>
+        <PageTitle>Services</PageTitle>
       </TextWrapper>
     </PageWrapper>
   );

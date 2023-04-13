@@ -77,13 +77,13 @@ const Contact = () => {
               </label>
               <textarea
                 className="focus:shadow-outline w-full appearance-none rounded border py-2 px-3 leading-tight text-mainbg shadow focus:outline-none"
-                defaultValue="Describe the task"
+                defaultValue="Get back to me when you read this, please."
                 required
                 id="message"
                 ref={messageInputRef}
               ></textarea>
             </div>
-            <button className="w-full border-3 py-2 shadow-sm font-bold">
+            <button className="w-full border-3 border-black py-2 shadow-sm font-bold">
               Send
             </button>
           </form>

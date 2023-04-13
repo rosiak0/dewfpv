@@ -1,11 +1,12 @@
 import PageWrapper from "../../components/PageWrapper";
 import TextWrapper from "../../components/TextWrapper";
+import PageTitle from "../../components/PageTitle";
 
 const Projects = () => {
   return (
     <PageWrapper>
       <TextWrapper>
-        <h1>Projects</h1>
+        <PageTitle>Projects</PageTitle>
       </TextWrapper>
     </PageWrapper>
   );
