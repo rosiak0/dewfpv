@@ -12,19 +12,19 @@ const Contact = () => {
   const submitHandler = (event: any) => {
     event.preventDefault();
 
-    const enteredName = nameInputRef.current.value;
-    const enteredSurname = surnameInputRef.current.value;
-    const enteredEmail = emailInputRef.current.value;
-    const enteredMessage = messageInputRef.current.value;
+    // const enteredName = nameInputRef.current.value;
+    // const enteredSurname = surnameInputRef.current.value;
+    // const enteredEmail = emailInputRef.current.value;
+    // const enteredMessage = messageInputRef.current.value;
 
-    const messageData = {
-      name: enteredName,
-      surname: enteredSurname,
-      email: enteredEmail,
-      message: enteredMessage,
-    };
+    // const messageData = {
+    //   name: enteredName,
+    //   surname: enteredSurname,
+    //   email: enteredEmail,
+    //   message: enteredMessage,
+    // };
 
-    console.log(messageData);
+    // console.log(messageData);
   };
 
   return (
@@ -43,7 +43,7 @@ const Contact = () => {
                   type="text"
                   required
                   id="name"
-                  ref={nameInputRef}
+                  // ref={nameInputRef}
                 ></input>
               </div>
               <div className="w-1/2">
@@ -55,7 +55,7 @@ const Contact = () => {
                   type="text"
                   required
                   id="surname"
-                  ref={surnameInputRef}
+                  // ref={surnameInputRef}
                 ></input>
               </div>
             </div>
@@ -68,7 +68,7 @@ const Contact = () => {
                 type="email"
                 required
                 id="email"
-                ref={emailInputRef}
+                // ref={emailInputRef}
               ></input>
             </div>
             <div>
@@ -80,7 +80,7 @@ const Contact = () => {
                 defaultValue="Get back to me when you read this, please."
                 required
                 id="message"
-                ref={messageInputRef}
+                // ref={messageInputRef}
               ></textarea>
             </div>
             <button className="w-full border-3 border-black py-2 shadow-sm font-bold">
