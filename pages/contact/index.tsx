@@ -39,7 +39,7 @@ const Contact = () => {
                   name:
                 </label>
                 <input
-                  className="focus:shadow-outline w-full appearance-none rounded border py-2 px-3 leading-tight text-mainbg shadow focus:outline-none"
+                  className="focus:shadow-outline w-full appearance-none border py-2 px-3 leading-tight text-mainbg shadow focus:outline-none"
                   type="text"
                   required
                   id="name"
@@ -51,7 +51,7 @@ const Contact = () => {
                   surname:
                 </label>
                 <input
-                  className="focus:shadow-outline w-full appearance-none rounded border py-2 px-3 leading-tight text-mainbg shadow focus:outline-none"
+                  className="focus:shadow-outline w-full appearance-none border py-2 px-3 leading-tight text-mainbg shadow focus:outline-none"
                   type="text"
                   required
                   id="surname"
@@ -64,7 +64,7 @@ const Contact = () => {
                 email:
               </label>
               <input
-                className="focus:shadow-outline w-full appearance-none rounded border py-2 px-3 leading-tight text-mainbg shadow focus:outline-none"
+                className="focus:shadow-outline w-full appearance-none border py-2 px-3 leading-tight text-mainbg shadow focus:outline-none"
                 type="email"
                 required
                 id="email"
@@ -76,7 +76,7 @@ const Contact = () => {
                 message:
               </label>
               <textarea
-                className="focus:shadow-outline w-full appearance-none rounded border py-2 px-3 leading-tight text-mainbg shadow focus:outline-none"
+                className="focus:shadow-outline w-full appearance-none border py-2 px-3 leading-tight text-mainbg shadow focus:outline-none"
                 defaultValue="Get back to me when you read this, please."
                 required
                 id="message"
