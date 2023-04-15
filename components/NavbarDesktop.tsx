@@ -42,7 +42,7 @@ const NavbarDesktop = () => {
               onClick={() =>
                 theme == "dark" ? setTheme("light") : setTheme("dark")
               }
-              className=" transition-all duration-100 text-gray-800 dark:text-gray-50"
+              className="mx-3 transition-all duration-100 text-gray-800 dark:text-gray-50"
             >
               {theme == "light" ? "dark" : "light"}
             </button>
