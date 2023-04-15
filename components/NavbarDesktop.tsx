@@ -1,6 +1,7 @@
 import Link from "next/link";
 
 import { usePathname } from "next/navigation";
+import { useTheme } from "next-themes";
 
 import { BsFacebook, BsInstagram, BsYoutube } from "react-icons/bs";
 
@@ -12,10 +13,13 @@ const links = [
 ];
 
 const NavbarDesktop = () => {
+  const { systemTheme, theme, setTheme } = useTheme();
+  const currentTheme = theme === "system" ? systemTheme : theme;
+
   const path = usePathname();
 
   return (
-    <nav className="fixed w-full shadow-lg">
+    <nav className="fixed w-full shadow-md">
       <div className="w-full lg:w-3/5 lg:mx-auto mx-3 py-4 ">
         <ul className="flex justify-between">
           {links.map((link) => (
@@ -33,7 +37,16 @@ const NavbarDesktop = () => {
               </div>
             </li>
           ))}
-
+          <div>
+            <button
+              onClick={() =>
+                theme == "dark" ? setTheme("light") : setTheme("dark")
+              }
+              className=" transition-all duration-100 text-gray-800 dark:text-gray-50"
+            >
+              {theme == "light" ? "dark" : "light"}
+            </button>
+          </div>
           <li className="flex justify-between">
             <div className="w-10 my-auto">
               <Link href="https://www.youtube.com/@DewFPV">

@@ -1,9 +1,12 @@
 import PageWrapper from "../../components/PageWrapper";
 import TextWrapper from "../../components/TextWrapper";
 import PageTitle from "../../components/PageTitle";
-import { useRef } from "react";
+import { useRef, useContext } from "react";
+// import AppContext from "../../context/LanguageContext";
 
 const Contact = () => {
+  // const context = useContext(AppContext);
+
   const nameInputRef = useRef();
   const surnameInputRef = useRef();
   const emailInputRef = useRef();
@@ -36,6 +39,7 @@ const Contact = () => {
             <div className="flex">
               <div className="w-1/2 mr-10">
                 <label className="mb-2 block font-bold" htmlFor="name">
+                  {/* {context.language === "ENG" ? name:} */}
                   name:
                 </label>
                 <input
