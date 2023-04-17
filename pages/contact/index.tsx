@@ -1,11 +1,13 @@
+"use client";
+
 import PageWrapper from "../../components/PageWrapper";
 import TextWrapper from "../../components/TextWrapper";
 import PageTitle from "../../components/PageTitle";
 import { useRef, useContext } from "react";
-// import AppContext from "../../context/LanguageContext";
+import LanguageContext from "../../context/LanguageContext";
 
 const Contact = () => {
-  // const context = useContext(AppContext);
+  const context = useContext(LanguageContext);
 
   const nameInputRef = useRef();
   const surnameInputRef = useRef();
@@ -33,17 +35,19 @@ const Contact = () => {
   return (
     <PageWrapper>
       <TextWrapper>
-        <PageTitle>Contact</PageTitle>
+        <PageTitle>
+          {context.siteLanguage === "en" ? "Contact" : "Kontakt"}
+        </PageTitle>
         <div className="fixed border p-4">
           <form onSubmit={submitHandler}>
             <div className="flex">
               <div className="w-1/2 mr-10">
                 <label className="mb-2 block font-bold" htmlFor="name">
-                  {/* {context.language === "ENG" ? name:} */}
-                  name:
+                  {context.siteLanguage === "en" ? "name:" : "imię:"}
+                  {/* name: */}
                 </label>
                 <input
-                  className="focus:shadow-outline w-full appearance-none border py-2 px-3 leading-tight text-mainbg shadow focus:outline-none"
+                  className="focus:shadow-outline w-full appearance-none border py-2 px-3 leading-tight text-gray-900 dark:text-gray-50 bg-gray-50 dark:bg-gray-900 shadow focus:outline-none"
                   type="text"
                   required
                   id="name"
@@ -52,10 +56,10 @@ const Contact = () => {
               </div>
               <div className="w-1/2">
                 <label className="mb-2  block font-bold" htmlFor="surname">
-                  surname:
+                  {context.siteLanguage === "en" ? "surname:" : "nazwisko:"}
                 </label>
                 <input
-                  className="focus:shadow-outline w-full appearance-none border py-2 px-3 leading-tight text-mainbg shadow focus:outline-none"
+                  className="focus:shadow-outline w-full appearance-none border py-2 px-3 leading-tight  text-gray-900 dark:text-gray-50 bg-gray-50 dark:bg-gray-900 shadow focus:outline-none"
                   type="text"
                   required
                   id="surname"
@@ -68,7 +72,7 @@ const Contact = () => {
                 email:
               </label>
               <input
-                className="focus:shadow-outline w-full appearance-none border py-2 px-3 leading-tight text-mainbg shadow focus:outline-none"
+                className="focus:shadow-outline w-full appearance-none border py-2 px-3 leading-tight  text-gray-900 dark:text-gray-50 bg-gray-50 dark:bg-gray-900 shadow focus:outline-none"
                 type="email"
                 required
                 id="email"
@@ -77,18 +81,18 @@ const Contact = () => {
             </div>
             <div>
               <label className="mb-2 block font-bold" htmlFor="message">
-                message:
+                {context.siteLanguage === "en" ? "message:" : "wiadomość:"}
               </label>
               <textarea
-                className="focus:shadow-outline w-full appearance-none border py-2 px-3 leading-tight text-mainbg shadow focus:outline-none"
-                defaultValue="Get back to me when you read this, please."
+                className="focus:shadow-outline w-full appearance-none border py-2 px-3 leading-tight  text-gray-900 dark:text-gray-50 bg-gray-50 dark:bg-gray-900 shadow focus:outline-none"
+                defaultValue=""
                 required
                 id="message"
                 // ref={messageInputRef}
               ></textarea>
             </div>
-            <button className="w-full border-3 border-black py-2 shadow-sm font-bold">
-              Send
+            <button className="w-full border-3 border-black py-2 shadow-sm  text-gray-50 dark:text-gray-900 bg-gray-900 dark:bg-gray-50 font-bold">
+              {context.siteLanguage === "en" ? "Send" : "Wyślij"}
             </button>
           </form>
         </div>

@@ -4,11 +4,11 @@ const PageWrapper = ({ children }: any) => {
   return (
     <AnimatePresence>
       <motion.div
-        initial={{ opacity: 0, y: -50 }}
+        initial={{ opacity: 0, y: -30 }}
         animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -50 }}
+        exit={{ opacity: 0, y: -30 }}
         transition={{ delay: 0.25 }}
-        className="w-full lg:w-3/5 lg:mx-auto mx-3 pt-20 h-screen"
+        className="w-full lg:w-3/5 lg:mx-auto mx-3 pt-20"
       >
         {children}
       </motion.div>
