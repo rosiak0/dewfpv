@@ -28,14 +28,13 @@ const NavbarDesktop = () => {
       <div className=" w-full lg:w-3/5 lg:mx-auto mx-3 py-4 ">
         <ul className="flex justify-between">
           {links.map((link) => (
-            <li
-              className="hover:font-bold hover:duration-200 w-40  mx-1"
-              key={link.href}
-            >
+            <li className="hover:font-bold  w-40  mx-1" key={link.href}>
               <div>
                 <Link
                   className={`${
-                    link.href === path ? "font-bold " : "text-gray-500"
+                    link.href === path
+                      ? "font-bold "
+                      : "text-gray-500 hover:text-900 dark:hover:text-gray-50 hover:duration-200"
                   } `}
                   href={link.href}
                 >
