@@ -44,6 +44,16 @@ const NavbarDesktop = () => {
               </div>
             </li>
           ))}
+          <div>
+            <button
+              onClick={() =>
+                theme == "dark" ? setTheme("light") : setTheme("dark")
+              }
+              className="mx-3 transition-all duration-100 text-gray-800 dark:text-gray-50"
+            >
+              {theme == "light" ? "dark" : "light"}
+            </button>
+          </div>
           <li className="flex justify-between">
             <div className="w-10 my-auto">
               <Link href="https://www.youtube.com/@DewFPV" target="_blank">

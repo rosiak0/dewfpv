@@ -3,7 +3,6 @@
 @tailwind utilities;
 
 @layer base {
-  html,
   body {
     @apply dark:bg-gray-900 bg-gray-50;
     @apply dark:text-gray-50 text-gray-900;
@@ -11,4 +10,9 @@
     height: 100%;
     font-family: "Rubik", sans-serif;
   }
+}
+HTML,
+body {
+  height: 100%;
+  font-family: "Rubik", sans-serif;
 }
