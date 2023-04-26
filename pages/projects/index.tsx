@@ -3,13 +3,18 @@
 import PageWrapper from "../../components/PageWrapper";
 import TextWrapper from "../../components/TextWrapper";
 import PageTitle from "../../components/PageTitle";
+import { useContext } from "react";
+import LanguageContext from "../../context/LanguageContext";
 
 const Projects = () => {
+  const context = useContext(LanguageContext);
   return (
     <PageWrapper>
-      <TextWrapper>
-        <PageTitle>Projects</PageTitle>
-      </TextWrapper>
+      <PageTitle>
+        {" "}
+        {context.siteLanguage === "en" ? "Projects" : "Projekty"}
+      </PageTitle>
+      <TextWrapper>Projects</TextWrapper>
     </PageWrapper>
   );
 };

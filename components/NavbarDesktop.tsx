@@ -1,44 +1,38 @@
 //regular navbar
 
 import Link from "next/link";
-
 import { usePathname } from "next/navigation";
-import { useTheme } from "next-themes";
+import { BsFacebook, BsInstagram, BsYoutube } from "react-icons/bs";
 import { useContext } from "react";
 import LanguageContext from "../context/LanguageContext";
 
-import { BsFacebook, BsInstagram, BsYoutube } from "react-icons/bs";
-
 const links = [
-  { href: "/", text: "Dew" },
-  { href: "/projects", text: "Projects" },
-  { href: "/services", text: "Services" },
-  { href: "/contact", text: "Contact" },
+  { href: "/", textEng: "Dew Drones", textPl: "Dew Drones" },
+  // { href: "/projects", textEng: "Projects", textPl: "Projekty" },
+  { href: "/services", textEng: "Services", textPl: "Usługi" },
+  { href: "/contact", textEng: "Contact", textPl: "Kontakt" },
 ];
 
 const NavbarDesktop = () => {
   const context = useContext(LanguageContext);
-  const { systemTheme, theme, setTheme } = useTheme();
-  const currentTheme = theme === "system" ? systemTheme : theme;
-
   const path = usePathname();
 
   return (
-    <nav className="fixed w-full shadow-md">
-      <div className=" w-full lg:w-3/5 lg:mx-auto mx-3 py-4 ">
+    <nav className="z-30 fixed w-full shadow-md  bg-gray-50 dark:bg-gray-900">
+      <div className="max-w-full lg:w-3/5 lg:mx-auto mx-3 py-4">
         <ul className="flex justify-between">
           {links.map((link) => (
-            <li className="hover:font-bold  w-40  mx-1" key={link.href}>
+            <li className="hover:font-bold w-40 mx-1" key={link.href}>
               <div>
                 <Link
                   className={`${
                     link.href === path
                       ? "font-bold "
-                      : "text-gray-500 hover:text-900 dark:hover:text-gray-50 hover:duration-200"
+                      : "text-gray-900 dark:text-gray-50 hover:duration-200"
                   } `}
                   href={link.href}
                 >
-                  {link.text}
+                  {context.siteLanguage === "en" ? link.textEng : link.textPl}
                 </Link>
               </div>
             </li>
@@ -61,26 +55,6 @@ const NavbarDesktop = () => {
               </Link>
             </div>
           </li>
-          <div className="mx-3 flex">
-            <button
-              onClick={() =>
-                theme == "dark" ? setTheme("light") : setTheme("dark")
-              }
-              className="mx-1 transition-all text-gray-800 dark:text-gray-50 duration-200"
-            >
-              {theme == "light" ? "dark" : "light"}
-            </button>
-            <button
-              onClick={() =>
-                context.setSiteLanguage(
-                  context.siteLanguage === "en" ? "pl" : "en"
-                )
-              }
-              className="mx-1 w-10"
-            >
-              {context.siteLanguage === "pl" ? "eng" : "pl"}
-            </button>
-          </div>
         </ul>
       </div>
     </nav>

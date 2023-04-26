@@ -7,12 +7,13 @@
     @apply dark:bg-gray-900 bg-gray-50;
     @apply dark:text-gray-50 text-gray-900;
     transition: background-color 300ms ease;
+
     height: 100%;
     font-family: "Rubik", sans-serif;
   }
 }
-HTML,
+/* HTML,
 body {
   height: 100%;
   font-family: "Rubik", sans-serif;
-}
+} */
