@@ -7,7 +7,7 @@ import { useContext } from "react";
 import LanguageContext from "../context/LanguageContext";
 
 const links = [
-  { href: "/", textEng: "Dew Drones", textPl: "Dew Drones" },
+  { href: "/", textEng: "Dew FPV", textPl: "Dew FPV" },
   // { href: "/projects", textEng: "Projects", textPl: "Projekty" },
   { href: "/services", textEng: "Services", textPl: "Usługi" },
   { href: "/contact", textEng: "Contact", textPl: "Kontakt" },
