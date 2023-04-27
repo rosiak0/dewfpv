@@ -6,17 +6,30 @@ import PageTitle from "../../components/PageTitle";
 import { useContext } from "react";
 import LanguageContext from "../../context/LanguageContext";
 import { useFormik } from "formik";
-import { contactSchema } from "../../schemas";
+import * as yup from "yup";
+
+const contactSchema = yup.object().shape({
+  email: yup.string().email("Please enter a valid email").required("Required"),
+  name: yup.string().required("Required"),
+  message: yup.string().required("Required"),
+});
 
 interface ContactFormValues {
   name: string;
-  surname: string;
   email: string;
   message: string;
 }
 
-const onSubmit = () => {
-  console.log("submitted");
+const onSubmit = (values: any, actions: any) => {
+  // e.preventDefault();
+
+  // emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
+  //   .then((result) => {
+  //       console.log(result.text);
+  //   }, (error) => {
+  //       console.log(error.text);
+
+  actions.resetForm();
 };
 
 const normalInput =
@@ -26,17 +39,23 @@ const errorInput =
 
 const Contact = () => {
   const context = useContext(LanguageContext);
-  const { values, errors, touched, handleChange, handleBlur, handleSubmit } =
-    useFormik<ContactFormValues>({
-      initialValues: {
-        name: "",
-        surname: "",
-        email: "",
-        message: "",
-      },
-      validationSchema: contactSchema,
-      onSubmit: onSubmit,
-    });
+  const {
+    values,
+    errors,
+    touched,
+    isSubmitting,
+    handleChange,
+    handleBlur,
+    handleSubmit,
+  } = useFormik<ContactFormValues>({
+    initialValues: {
+      name: "",
+      email: "",
+      message: "",
+    },
+    validationSchema: contactSchema,
+    onSubmit: onSubmit,
+  });
 
   return (
     <PageWrapper>
@@ -62,86 +81,62 @@ const Contact = () => {
         </address>
         <div className="border p-4">
           <form onSubmit={handleSubmit} autoComplete="off">
-            <div className="flex">
-              <div className="w-1/2 mr-10">
-                <label className="mb-2 block font-bold" htmlFor="name">
-                  {context.siteLanguage === "en" ? "name:" : "imię i nazwisko:"}
-                </label>
-                <input
-                  className={
-                    errors.name && touched.name ? errorInput : normalInput
-                  }
-                  value={values.name}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  placeholder="Enter your name"
-                  type="text"
-                  id="name"
-                />
-                {errors.name && touched.name && (
-                  <p className="text-sm text-red-500">{errors.email}</p>
-                )}
-              </div>
-              <div className="w-1/2">
-                <label className="mb-2  block font-bold" htmlFor="surname">
-                  {context.siteLanguage === "en" ? "surname:" : "nazwisko:"}
-                </label>
-                <input
-                  className={
-                    errors.surname && touched.surname ? errorInput : normalInput
-                  }
-                  id="surname"
-                  type="text"
-                  value={values.surname}
-                  onChange={handleChange}
-                  onBlur={handleBlur}
-                  placeholder="Enter your surname"
-                />
-                {errors.surname && touched.surname && (
-                  <p className="text-sm text-red-500">{errors.surname}</p>
-                )}
-              </div>
-            </div>
-            <div>
-              <label className="mb-2 block font-bold " htmlFor="email">
-                email:
+            <div className="">
+              <label className="mb-2 block font-bold" htmlFor="name">
+                {context.siteLanguage === "en" ? "name:" : "imię i nazwisko:"}
               </label>
               <input
                 className={
-                  errors.email && touched.email ? errorInput : normalInput
+                  errors.name && touched.name ? errorInput : normalInput
                 }
-                type="email"
-                id="email"
-                value={values.email}
+                value={values.name}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                placeholder="Enter your email"
-              />{" "}
-              {errors.email && touched.email && (
+                placeholder="Enter your name"
+                type="text"
+                id="name"
+              />
+              {errors.name && touched.name && (
                 <p className="text-sm text-red-500">{errors.email}</p>
               )}
             </div>
-            <div>
-              <label className="mb-2 block font-bold" htmlFor="message">
-                {context.siteLanguage === "en" ? "message:" : "wiadomość:"}
-              </label>
-              <textarea
-                className={
-                  errors.message && touched.message ? errorInput : normalInput
-                }
-                id="message"
-                value={values.message}
-                onChange={handleChange}
-                onBlur={handleBlur}
-                placeholder=""
-              />{" "}
-              {errors.message && touched.message && (
-                <p className="text-sm text-red-500">{errors.message}</p>
-              )}
-            </div>
+            <label className="mb-2 block font-bold " htmlFor="email">
+              email:
+            </label>
+            <input
+              className={
+                errors.email && touched.email ? errorInput : normalInput
+              }
+              type="email"
+              id="email"
+              value={values.email}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              placeholder="Enter your email"
+            />{" "}
+            {errors.email && touched.email && (
+              <p className="text-sm text-red-500">{errors.email}</p>
+            )}
+            <label className="mb-2 block font-bold" htmlFor="message">
+              {context.siteLanguage === "en" ? "message:" : "wiadomość:"}
+            </label>
+            <textarea
+              className={
+                errors.message && touched.message ? errorInput : normalInput
+              }
+              id="message"
+              value={values.message}
+              onChange={handleChange}
+              onBlur={handleBlur}
+              placeholder=""
+            />
+            {errors.message && touched.message && (
+              <p className="text-sm text-red-500">{errors.message}</p>
+            )}
             <button
               type="submit"
-              className="w-full border-3 border-black py-2 shadow-sm  text-gray-50 dark:text-gray-900 bg-gray-900 dark:bg-gray-50 font-bold"
+              disabled={isSubmitting}
+              className="w-full border-3 border-black py-2 shadow-sm  text-gray-50 dark:text-gray-900 bg-gray-900 dark:bg-gray-50 font-bold disabled:opacity-30 dark:active:bg-gray-900 dark:active:text-gray-50 dark:active:border dark:active:border-gray-50 active:bg-gray-50 active:text-gray-900 active:border active:border-gray-900 duration-200"
             >
               {context.siteLanguage === "en" ? "Send" : "Wyślij"}
             </button>
