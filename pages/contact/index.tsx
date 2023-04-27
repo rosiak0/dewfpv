@@ -97,7 +97,7 @@ const Contact = () => {
                 id="name"
               />
               {errors.name && touched.name && (
-                <p className="text-sm text-red-500">{errors.email}</p>
+                <p className="text-sm text-red-500">{errors.name}</p>
               )}
             </div>
             <label className="mb-2 block font-bold " htmlFor="email">
