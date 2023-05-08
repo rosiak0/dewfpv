@@ -2,7 +2,7 @@
 
 import PageWrapper from "../../components/PageWrapper";
 import TextWrapper from "../../components/TextWrapper";
-import PageTitle from "../../components/PageTitle";
+// import PageTitle from "../../components/PageTitle";
 import { useContext } from "react";
 import LanguageContext from "../../context/LanguageContext";
 import { useFormik } from "formik";
@@ -75,9 +75,9 @@ const Contact = () => {
 
   return (
     <PageWrapper>
-      <PageTitle>
+      {/* <PageTitle>
         {context.siteLanguage === "en" ? "Contact" : "Kontakt"}
-      </PageTitle>
+      </PageTitle> */}
       <TextWrapper>
         <h1 className="text-xl pb-3">Dew FPV</h1>
         <p className="pb-10">
@@ -100,7 +100,7 @@ const Contact = () => {
           </div>
         </address>
 
-        <div className="border p-4 w-full md:w-3/5 md:m-auto">
+        <div className="border border-1 border-gray-900 dark:border-gray-50 p-4 w-full md:w-3/5 lg:w-full xl:w-3/5  md:m-auto">
           <form onSubmit={handleSubmit} autoComplete="off">
             <div className="">
               <label className="mb-2 block font-bold" htmlFor="name">

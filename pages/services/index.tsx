@@ -2,7 +2,7 @@
 
 import PageWrapper from "../../components/PageWrapper";
 import TextWrapper from "../../components/TextWrapper";
-import PageTitle from "../../components/PageTitle";
+// import PageTitle from "../../components/PageTitle";
 import { useContext } from "react";
 import LanguageContext from "../../context/LanguageContext";
 import Image from "next/image";
@@ -69,9 +69,9 @@ const Services = () => {
 
   return (
     <PageWrapper>
-      <PageTitle>
+      {/* <PageTitle>
         {context.siteLanguage === "en" ? "Services" : "Usługi"}
-      </PageTitle>
+      </PageTitle> */}
       <TextWrapper>
         <p className="pb-20">
           {context.siteLanguage === "en"
