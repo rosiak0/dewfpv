@@ -6,6 +6,7 @@ import PageTitle from "../components/PageTitle";
 import ShowReel from "../components/ShowReel";
 import LanguageContext from "../context/LanguageContext";
 import { useContext } from "react";
+import Link from "next/link";
 
 const experience = new Date().getFullYear() - 2017;
 
@@ -22,10 +23,17 @@ export default function Home() {
               : `Witaj w Dew Aerials, jesteśmy specjalistami w dziedzinie filmowania za pomocą dronów FPV. Posiadamy ${experience}-letnie doświadczenie w branży, dostarczając oszałamiające ujęcia dla filmów komercyjnych, nieruchomości oraz sportów ekstremalnych. Nasza pasja oraz innowacyjne techniki pozwalają nam przekraczać granice możliwości. Wybierz Dew Aerials i osiągnij nowe wysokości.`}
           </p>
           <div className="flex justify-around mb-10">
-            <button className="w-56 h-10 border border-1">
-              Explore our options
-            </button>
-            <button className="w-56">Hire us</button>
+            <Link href="/services">
+              {" "}
+              <button className="w-56 h-10 border border-1 dark:border-gray-50 border-gray-900">
+                Explore our options
+              </button>
+            </Link>
+            <Link href="/contact">
+              <button className="w-56 h-10 border border-1 dark:border-gray-900 border-gray-50 bg-gray-900 dark:bg-gray-50 text-gray-50 dark:text-gray-900">
+                Hire us
+              </button>
+            </Link>
           </div>
           <ShowReel />
         </div>
