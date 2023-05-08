@@ -13,7 +13,7 @@ const Layout = ({ children }: any) => {
   return (
     <>
       <Image
-        className="-z-10 absolute h-screen w-auto overflow-hidden opacity-70 object-cover"
+        className="-z-10 opacity-70 object-cover  top-0 right-0 fixed h-screen w-full overflow-hidden"
         src={theme === "dark" ? darkbg : lightbg}
         width={3840}
         height={2160}

@@ -7,6 +7,7 @@ import { useContext } from "react";
 import LanguageContext from "../../context/LanguageContext";
 import { useFormik } from "formik";
 import * as yup from "yup";
+import Socials from "../../components/Socials";
 
 const contactSchema = (lang: string) =>
   yup.object().shape({
@@ -84,17 +85,22 @@ const Contact = () => {
             ? "We're excited to collaborate with you and make your ideas a reality. Contact us via phone, email, or our online form to discuss your project. We are ready to provide customized solutions that meet your needs and exceed your expectations."
             : "Jesteśmy zainteresowani współpracą z Tobą i realizacją Twoich pomysłów. Skontaktuj się z nami telefonicznie, mailowo lub za pomocą naszego formularza online, aby omówić swoje projekty. Jesteśmy gotowi dostarczyć spersonalizowane rozwiązania, które spełnią Twoje potrzeby i przekroczą Twoje oczekiwania"}
         </p>
-        <address className="pb-10">
-          <a href="mailto:maciejrosa1@gmail.com" className="not-italic">
+        <address className="mb-8">
+          <a href="mailto:maciejrosa1@gmail.com" className="not-italic mb-5">
             maciejrosa1@gmail.com
           </a>
           <br />
           <br />
-          <a href="tel:+48695227141" className="not-italic">
+          <a href="tel:+48695227141" className="not-italic ">
             +48 695 227 141
           </a>
+          <br />
+          <div className="mt-6">
+            <Socials />
+          </div>
         </address>
-        <div className="border p-4">
+
+        <div className="border p-4 w-full md:w-3/5 md:m-auto">
           <form onSubmit={handleSubmit} autoComplete="off">
             <div className="">
               <label className="mb-2 block font-bold" htmlFor="name">
@@ -136,7 +142,7 @@ const Contact = () => {
                   ? "Enter your email"
                   : "Wprowadź swój email"
               }
-            />{" "}
+            />
             {errors.email && touched.email && (
               <p className="text-sm text-red-500">{errors.email}</p>
             )}
@@ -151,7 +157,11 @@ const Contact = () => {
               value={values.message}
               onChange={handleChange}
               onBlur={handleBlur}
-              placeholder=""
+              placeholder={
+                context.siteLanguage === "en"
+                  ? "Enter your message here"
+                  : "Tu wprowadź swoją wiadomość"
+              }
             />
             {errors.message && touched.message && (
               <p className="text-sm text-red-500">{errors.message}</p>

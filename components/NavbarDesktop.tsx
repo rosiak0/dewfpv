@@ -2,9 +2,9 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { BsFacebook, BsInstagram, BsYoutube } from "react-icons/bs";
 import { useContext } from "react";
 import LanguageContext from "../context/LanguageContext";
+import Socials from "./Socials";
 
 const links = [
   { href: "/", textEng: "Dew Aerials", textPl: "Dew Aerials" },
@@ -38,23 +38,7 @@ const NavbarDesktop = () => {
             </li>
           ))}
 
-          <li className="flex justify-between">
-            <div className="w-10 my-auto">
-              <Link href="https://www.youtube.com/@DewFPV" target="_blank">
-                <BsYoutube />
-              </Link>
-            </div>
-            <div className="w-10 my-auto">
-              <Link href="https://www.instagram.com/dewfpv/" target="_blank">
-                <BsInstagram />
-              </Link>
-            </div>
-            <div className="w-10 my-auto">
-              <Link href="https://www.facebook.com/dew.fpv" target="_blank">
-                <BsFacebook />
-              </Link>
-            </div>
-          </li>
+          <Socials />
         </ul>
       </div>
     </nav>
