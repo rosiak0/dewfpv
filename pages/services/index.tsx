@@ -83,7 +83,7 @@ const Services = () => {
             <li className="mb-20 " key={drone.id}>
               <div className="flex justify-between bg-black bg-opacity-10 shadow pl-5">
                 <div>
-                  <h1 className="text-2xl">
+                  <h1 className="text-2xl text-start">
                     {context.siteLanguage === "en"
                       ? drone.nameEng
                       : drone.namePL}
