@@ -8,11 +8,25 @@ import LanguageContext from "../../context/LanguageContext";
 import { useFormik } from "formik";
 import * as yup from "yup";
 
-const contactSchema = yup.object().shape({
-  email: yup.string().email("Please enter a valid email").required("Required"),
-  name: yup.string().required("Required"),
-  message: yup.string().required("Required"),
-});
+const contactSchema = (lang: string) =>
+  yup.object().shape({
+    email: yup
+      .string()
+      .email(() => {
+        return lang === "en"
+          ? "Please enter a valid email"
+          : "Wprowadź prawidłowy email";
+      })
+      .required(() => {
+        return lang === "en" ? "Required" : "Wymagane";
+      }),
+    name: yup.string().required(() => {
+      return lang === "en" ? "Required" : "Wymagane";
+    }),
+    message: yup.string().required(() => {
+      return lang === "en" ? "Required" : "Wymagane";
+    }),
+  });
 
 interface ContactFormValues {
   name: string;
@@ -39,6 +53,7 @@ const errorInput =
 
 const Contact = () => {
   const context = useContext(LanguageContext);
+  const schema = contactSchema(context.siteLanguage);
   const {
     values,
     errors,
@@ -53,7 +68,7 @@ const Contact = () => {
       email: "",
       message: "",
     },
-    validationSchema: contactSchema,
+    validationSchema: schema,
     onSubmit: onSubmit,
   });
 
@@ -92,12 +107,16 @@ const Contact = () => {
                 value={values.name}
                 onChange={handleChange}
                 onBlur={handleBlur}
-                placeholder="Enter your name"
+                placeholder={
+                  context.siteLanguage === "en"
+                    ? "Enter your name"
+                    : "Wprowadź swoje imię i nazwisko"
+                }
                 type="text"
                 id="name"
               />
               {errors.name && touched.name && (
-                <p className="text-sm text-red-500">{errors.email}</p>
+                <p className="text-sm text-red-500">{errors.name}</p>
               )}
             </div>
             <label className="mb-2 block font-bold " htmlFor="email">
@@ -112,7 +131,11 @@ const Contact = () => {
               value={values.email}
               onChange={handleChange}
               onBlur={handleBlur}
-              placeholder="Enter your email"
+              placeholder={
+                context.siteLanguage === "en"
+                  ? "Enter your email"
+                  : "Wprowadź swój email"
+              }
             />{" "}
             {errors.email && touched.email && (
               <p className="text-sm text-red-500">{errors.email}</p>
