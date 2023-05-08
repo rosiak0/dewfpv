@@ -1,3 +1,5 @@
+"client";
+
 import { useTheme } from "next-themes";
 import { useContext } from "react";
 import LanguageContext from "../context/LanguageContext";
