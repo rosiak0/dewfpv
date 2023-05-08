@@ -73,10 +73,11 @@ const Services = () => {
         {context.siteLanguage === "en" ? "Services" : "Usługi"}
       </PageTitle> */}
       <TextWrapper>
+<h1>Title</h1>
         <p className="pb-20">
           {context.siteLanguage === "en"
-            ? "We offer a range of drones that can help you fulfill your vision. We understand that different projects require different types of drones, and that's why we've got you covered with a variety of options to choose from. Here are just a few of the types of drones that we offer"
-            : "Oferujemy gamę dronów, które pomogą Ci zrealizować Twoją wizję. Rozumiemy, że różne projekty wymagają różnych typów dronów, dlatego mamy dla Ciebie wiele opcji do wyboru. Oto kilka typów dronów, które oferujemy."}
+            ? "We offer a range of drones that can help you fulfill your vision. We understand that different projects require different types of drones, and that's why we've got you covered with a variety of options to choose from."
+            : "Oferujemy gamę dronów, które pomogą Ci zrealizować Twoją wizję. Rozumiemy, że różne projekty wymagają różnych typów dronów, dlatego mamy dla Ciebie wiele opcji do wyboru."}
         </p>
         <ul>
           {drones.map((drone) => (
