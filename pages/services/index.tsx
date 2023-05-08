@@ -80,8 +80,8 @@ const Services = () => {
         </p>
         <ul>
           {drones.map((drone) => (
-            <li className="pb-20" key={drone.id}>
-              <div className="flex justify-between">
+            <li className="mb-20 " key={drone.id}>
+              <div className="flex justify-between  shadow pl-5">
                 <div>
                   <h1 className="text-2xl">
                     {context.siteLanguage === "en"
