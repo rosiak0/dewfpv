@@ -31,7 +31,7 @@ export default function Home() {
               </button>
             </Link>
             <Link href="/contact">
-              <button className="w-56 h-10 border border-1 dark:border-gray-900 border-gray-50 bg-gray-900 dark:bg-gray-50 text-gray-50 dark:text-gray-900">
+              <button className="w-56 h-10 border border-1 dark:border-gray-50 border-gray-900 bg-gray-900 dark:bg-gray-50 text-gray-50 dark:text-gray-900">
                 Hire us
               </button>
             </Link>
