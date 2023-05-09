@@ -1,5 +1,5 @@
 import "../styles/globals.css";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Layout from "../components/Layout";
 import LanguageContext from "../context/LanguageContext";
 import Language from "../types/Language";
@@ -10,6 +10,10 @@ import { ThemeProvider } from "next-themes";
 export default function App({ Component, pageProps }: AppProps) {
   // const [mobileNav, setMoblieNav] = useState(false);
   const [siteLanguage, setSiteLanguage] = useState<Language>("en");
+  useEffect(() => {
+    const userLanguage = navigator.language.startsWith("pl") ? "pl" : "en";
+    setSiteLanguage(userLanguage);
+  }, []);
 
   return (
     <ThemeProvider attribute="class">

@@ -1,5 +1,3 @@
-"use client";
-
 import PageWrapper from "../../components/PageWrapper";
 import TextWrapper from "../../components/TextWrapper";
 // import PageTitle from "../../components/PageTitle";
