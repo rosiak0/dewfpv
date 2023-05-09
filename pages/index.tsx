@@ -17,7 +17,11 @@ export default function Home() {
         <title>Dew Aerials</title>
         <meta
           name="description"
-          content="Find the fpv pilot you need for your next project!"
+          content={
+            context.siteLanguage === "en"
+              ? "Experienced fpv drone pilot from Warsaw, Poland. Check out my offer"
+              : "Doświadczony pilot FPV z Warszawy. Sprawdź moją ofertę"
+          }
         />
       </Head>
       <PageWrapper>

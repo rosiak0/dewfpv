@@ -1,5 +1,6 @@
 import PageWrapper from "../../components/PageWrapper";
 import TextWrapper from "../../components/TextWrapper";
+import Head from "next/head";
 // import PageTitle from "../../components/PageTitle";
 import { useContext } from "react";
 import LanguageContext from "../../context/LanguageContext";
@@ -66,50 +67,63 @@ const Services = () => {
   const context = useContext(LanguageContext);
 
   return (
-    <PageWrapper>
-      {/* <PageTitle>
+    <>
+      <Head>
+        <title>Dew Aerials</title>
+        <meta
+          name="description"
+          content={
+            context.siteLanguage === "en"
+              ? "Check the drones we offer and the services that we can provide. It includes regular dji drones, fpv drones, cinewhoops, cinelifters and live broadcasting"
+              : "Sprawdź drony, które oferujemy oraz usługi, które możemy świadczyć. Zawierają one regularne drony DJI, drony fpv, cinewhoopy, cineliftery i transmisję na żywo."
+          }
+        />
+      </Head>
+      <PageWrapper>
+        {/* <PageTitle>
         {context.siteLanguage === "en" ? "Services" : "Usługi"}
       </PageTitle> */}
-      <TextWrapper>
-<h1>Title</h1>
-        <p className="pb-20">
-          {context.siteLanguage === "en"
-            ? "We offer a range of drones that can help you fulfill your vision. We understand that different projects require different types of drones, and that's why we've got you covered with a variety of options to choose from."
-            : "Oferujemy gamę dronów, które pomogą Ci zrealizować Twoją wizję. Rozumiemy, że różne projekty wymagają różnych typów dronów, dlatego mamy dla Ciebie wiele opcji do wyboru."}
-        </p>
-        <ul>
-          {drones.map((drone) => (
-            <li className="mb-20 " key={drone.id}>
-              <div className="flex justify-between bg-gray-900 bg-opacity-5 shadow pl-5">
-                <div>
-                  <h1 className="text-2xl text-start">
-                    {context.siteLanguage === "en"
-                      ? drone.nameEng
-                      : drone.namePL}
-                  </h1>
-                  <p>
-                    {context.siteLanguage === "en"
-                      ? drone.descriptionEng
-                      : drone.descriptionPL}
-                  </p>
+        <TextWrapper>
+          <h1>Title</h1>
+          <p className="pb-20">
+            {context.siteLanguage === "en"
+              ? "We offer a range of drones that can help you fulfill your vision. We understand that different projects require different types of drones, and that's why we've got you covered with a variety of options to choose from."
+              : "Oferujemy gamę dronów, które pomogą Ci zrealizować Twoją wizję. Rozumiemy, że różne projekty wymagają różnych typów dronów, dlatego mamy dla Ciebie wiele opcji do wyboru."}
+          </p>
+          <ul>
+            {drones.map((drone) => (
+              <li className="mb-20 " key={drone.id}>
+                <div className="flex justify-between bg-gray-900 bg-opacity-5 shadow pl-5">
+                  <div>
+                    <h1 className="text-2xl text-start">
+                      {context.siteLanguage === "en"
+                        ? drone.nameEng
+                        : drone.namePL}
+                    </h1>
+                    <p>
+                      {context.siteLanguage === "en"
+                        ? drone.descriptionEng
+                        : drone.descriptionPL}
+                    </p>
+                  </div>
+                  <Image
+                    className=""
+                    src={drone.image.src}
+                    width={150}
+                    height={150}
+                    alt={
+                      context.siteLanguage === "en"
+                        ? drone.image.altEng
+                        : drone.image.altPl
+                    }
+                  />
                 </div>
-                <Image
-                  className=""
-                  src={drone.image.src}
-                  width={150}
-                  height={150}
-                  alt={
-                    context.siteLanguage === "en"
-                      ? drone.image.altEng
-                      : drone.image.altPl
-                  }
-                />
-              </div>
-            </li>
-          ))}
-        </ul>
-      </TextWrapper>
-    </PageWrapper>
+              </li>
+            ))}
+          </ul>
+        </TextWrapper>
+      </PageWrapper>
+    </>
   );
 };
 export default Services;
