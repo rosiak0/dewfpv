@@ -26,14 +26,16 @@ const Navbar = () => {
       <div className="max-w-full lg:w-3/5 lg:mx-auto mx-3 py-4 ">
         <ul className="flex flex-wrap justify-between">
           <li>
-            <Link href="/">
-              <p className="inline-flex items-center">
-                <span className="text-l text-gray-900 dark:text-gray-50 font-bold uppercase tracking-wide">
-                  Dew Aerials
-                </span>
-                <Socials />
-              </p>
-            </Link>
+            <div className="inline-flex">
+              <Link href="/">
+                <p className="inline-flex items-center">
+                  <span className="text-xl text-gray-900 mr-5 dark:text-gray-50 font-bold uppercase tracking-wide">
+                    Dew Aerials
+                  </span>
+                </p>
+              </Link>
+              <Socials />
+            </div>
           </li>
 
           <li>
@@ -67,7 +69,7 @@ const Navbar = () => {
             <div className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-end  flex flex-col lg:h-auto">
               {links.map((link) => (
                 <li
-                  className="hover:font-bold lg:mx-4 mb-4 lg:mb-0"
+                  className="hover:font-bold text-lg lg:mx-4 my-2 lg:my-0 "
                   key={link.href}
                 >
                   <div>

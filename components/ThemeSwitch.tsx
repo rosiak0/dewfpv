@@ -23,7 +23,7 @@ const ThemeSwitch = () => {
   return (
     <button
       onClick={clickHandler}
-      className="lg:w-10 mx-1 mb-4 lg:mb-0 transition-all text-gray-900 dark:text-gray-50 duration-200 hover:font-bold"
+      className="lg:w-10 mx-1 my-2 lg:my-0 lg:mb-0 text-lg transition-all text-gray-900 dark:text-gray-50 duration-200 hover:font-bold"
     >
       {theme === "light" ? "dark" : "light"}
     </button>

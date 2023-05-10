@@ -97,7 +97,7 @@ const Services = () => {
                     <>
                       <Disclosure.Button className="w-full py-5 mt-2 bg-gray-900 dark:bg-opacity-50 bg-opacity-5 shadow pl-5 flex justify-between">
                         <div></div>
-                        <h1 className="text-2xl text-center">
+                        <h1 className="text-xl text-center">
                           {context.siteLanguage === "en"
                             ? drone.nameEng
                             : drone.namePL}
