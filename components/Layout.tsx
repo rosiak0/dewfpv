@@ -1,12 +1,12 @@
 import Footer from "./Footer";
-import Navbar from "./NavbarDesktop";
+import NavbarDesktop from "./NavbarDesktop";
 import ThemedImage from "./ThemedImage";
 
 const Layout = ({ children }: any) => {
   return (
     <>
       <ThemedImage />
-      <Navbar />
+      <NavbarDesktop />
       <main>{children}</main>
       <Footer />
     </>

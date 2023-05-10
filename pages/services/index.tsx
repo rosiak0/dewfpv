@@ -1,23 +1,17 @@
 import PageWrapper from "../../components/PageWrapper";
 import TextWrapper from "../../components/TextWrapper";
 import Head from "next/head";
+import { Disclosure } from "@headlessui/react";
+import { ChevronUpIcon } from "@heroicons/react/20/solid";
 // import PageTitle from "../../components/PageTitle";
-import { useContext } from "react";
+
+import { useContext, useState } from "react";
 import LanguageContext from "../../context/LanguageContext";
-import Image from "next/image";
-import fiveInch from "../../public/5inch.webp";
-import cinewhoop from "../../public/cinehwoop.webp";
-import dji from "../../public/air 2s.jpg";
-import cinelifter from "../../public/cinelifter.webp";
 
 const drones = [
   {
     id: 1,
-    image: {
-      src: fiveInch,
-      altEng: "5 inch drone",
-      altPl: "5-calowy dron",
-    },
+    videoSrc: "https://www.youtube.com/embed/cVE-l-yN3lw?start=23",
     nameEng: "5 inch drone with a GoPro",
     descriptionEng: "Quick and agile, max speed 180km/h, wateproof",
     namePL: "5-calowy dron z GoPro",
@@ -25,25 +19,17 @@ const drones = [
   },
   {
     id: 2,
-    image: {
-      src: cinewhoop,
-      altEng: "cinehwoop drone",
-      altPl: "dron typu cinewhoop",
-    },
+    videoSrc: "https://www.youtube.com/embed/LKMJBZGqbAQ",
     nameEng: "Cinewhoop",
     descriptionEng:
-      "Slow and steady, can fly close to objects and people, indestructible",
+      "Slow and steady, safe to fly close to objects and people, practically indestructible",
     namePL: "Cinewhoop",
     descriptionPL:
-      "Wolny i pewny, można nim latać blisko obieków i ludzi, niezniszczalny",
+      "Do wolnych i precyzyjnych lotów, można nim bezpiecznie latać blisko obieków i ludzi, praktycznie niezniszczalny",
   },
   {
     id: 3,
-    image: {
-      src: cinelifter,
-      altEng: "cinelifter drone",
-      altPl: "dron typu cinelifter",
-    },
+    videoSrc: "https://www.youtube.com/embed/_YPhO6OzJAg",
     nameEng: "Cinelifter",
     descriptionEng:
       "Can carry heavy cinematic cameras like RED Komodo, fully protected",
@@ -53,23 +39,25 @@ const drones = [
   },
   {
     id: 4,
-    image: { src: dji, altEng: "dji drone", altPl: "dron komercyjny dji" },
+    videoSrc: "https://www.youtube.com/embed/hnnfpxFlS2E",
     nameEng: "Live Broadcast",
     descriptionEng:
-      "FPV Drones and DJI Air 2s can transmit 1080p video that can used for live broadcast",
+      "FPV Drones using the DJI O3 Air Unit and the classic DJI Air 2s drone can transmit 1080p video that can used for live broadcast",
+
     namePL: "Transmisja na żywo",
     descriptionPL:
-      "Drony FPV oraz DJI Air 2s mogą nadawać wideo w jakości 1080p, która może zostać wykorzystana w transmisjach na żywo",
+      "Drony FPV wyposażone w O3 Air ?Unit od DJI oraz klasyczny dron DJI Air 2s mogą nadawać wideo w jakości 1080p, które może zostać wykorzystane w transmisjach na żywo",
   },
 ];
 
 const Services = () => {
   const context = useContext(LanguageContext);
+  const [activePanel, setActivePanel] = useState<number | null>(null);
 
   return (
     <>
       <Head>
-        <title>Dew Aerials</title>
+        <title>{context.siteLanguage === "en" ? "Services" : "Usługi"}</title>
         <meta
           name="description"
           content={
@@ -84,7 +72,11 @@ const Services = () => {
         {context.siteLanguage === "en" ? "Services" : "Usługi"}
       </PageTitle> */}
         <TextWrapper>
-          <h1>Title</h1>
+          <h1 className="text-2xl mb-10">
+            {context.siteLanguage === "en"
+              ? "Check out the gear we have and the possibilities it gives"
+              : "Sprawdź, jakie możliwości daje sprzęt, który posiadamy"}
+          </h1>
           <p className="pb-20">
             {context.siteLanguage === "en"
               ? "We offer a range of drones that can help you fulfill your vision. We understand that different projects require different types of drones, and that's why we've got you covered with a variety of options to choose from."
@@ -92,32 +84,51 @@ const Services = () => {
           </p>
           <ul>
             {drones.map((drone) => (
-              <li className="mb-20 " key={drone.id}>
-                <div className="flex justify-between bg-gray-900 bg-opacity-5 shadow pl-5">
-                  <div>
-                    <h1 className="text-2xl text-start">
-                      {context.siteLanguage === "en"
-                        ? drone.nameEng
-                        : drone.namePL}
-                    </h1>
-                    <p>
-                      {context.siteLanguage === "en"
-                        ? drone.descriptionEng
-                        : drone.descriptionPL}
-                    </p>
-                  </div>
-                  <Image
-                    className=""
-                    src={drone.image.src}
-                    width={150}
-                    height={150}
-                    alt={
-                      context.siteLanguage === "en"
-                        ? drone.image.altEng
-                        : drone.image.altPl
-                    }
-                  />
-                </div>
+              <li key={drone.id}>
+                <Disclosure
+                  as="div"
+                  className="w-full"
+                  open={activePanel === drone.id}
+                  onChange={() =>
+                    setActivePanel(activePanel === drone.id ? null : drone.id)
+                  }
+                >
+                  {({ open }) => (
+                    <>
+                      <Disclosure.Button className="w-full py-5 mt-2 bg-gray-900 dark:bg-opacity-50 bg-opacity-5 shadow pl-5 flex justify-between">
+                        <div></div>
+                        <h1 className="text-2xl text-center">
+                          {context.siteLanguage === "en"
+                            ? drone.nameEng
+                            : drone.namePL}
+                        </h1>
+                        <ChevronUpIcon
+                          className={`${
+                            open ? "transform rotate-180" : ""
+                          } w-5 h-5 duration-200`}
+                        />
+                      </Disclosure.Button>
+                      <Disclosure.Panel className="p-5">
+                        <p className="mb-5">
+                          {context.siteLanguage === "en"
+                            ? drone.descriptionEng
+                            : drone.descriptionPL}
+                        </p>
+
+                        <iframe
+                          className="m-auto aspect-video w-full h-auto"
+                          width="560"
+                          height="315"
+                          src={drone.videoSrc}
+                          title="YouTube video player"
+                          frameBorder="0"
+                          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                          allowFullScreen
+                        ></iframe>
+                      </Disclosure.Panel>
+                    </>
+                  )}
+                </Disclosure>
               </li>
             ))}
           </ul>
