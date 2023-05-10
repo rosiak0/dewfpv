@@ -75,7 +75,7 @@ const Contact = () => {
   return (
     <>
       <Head>
-        <title>Dew Aerials</title>
+        <title>Contact</title>
         <meta
           name="description"
           content={
