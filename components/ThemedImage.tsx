@@ -1,4 +1,3 @@
-"use client";
 import Image from "next/image";
 import darkbg from "../public/bg dark.png";
 import lightbg from "../public/bg light.png";
@@ -8,16 +7,20 @@ import LanguageContext from "../context/LanguageContext";
 
 function ThemedImage() {
   const context = useContext(LanguageContext);
-  const { resolvedTheme } = useTheme();
-  const [currentTheme, setCurrentTheme] = useState(resolvedTheme);
+  const { theme } = useTheme();
+  const [currentTheme, setCurrentTheme] = useState(theme);
 
   useEffect(() => {
-    setCurrentTheme(resolvedTheme);
-  }, [resolvedTheme]);
+    if (!currentTheme) {
+      setCurrentTheme("dark");
+    } else {
+      setCurrentTheme(theme);
+    }
+  }, [currentTheme, theme]);
 
-  let src;
+  let src = currentTheme === "dark" ? darkbg : lightbg;
 
-  switch (resolvedTheme) {
+  switch (currentTheme) {
     case "light":
       src = lightbg;
       break;
@@ -25,8 +28,6 @@ function ThemedImage() {
       src = darkbg;
       break;
     default:
-      src =
-        "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
       break;
   }
 
