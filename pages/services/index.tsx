@@ -88,7 +88,7 @@ const Services = () => {
                 <Disclosure
                   as="div"
                   className="w-full"
-                  open={activePanel === drone.id}
+                  // open={activePanel === drone.id}
                   onChange={() =>
                     setActivePanel(activePanel === drone.id ? null : drone.id)
                   }
