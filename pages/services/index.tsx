@@ -19,7 +19,7 @@ const drones = [
   },
   {
     id: 2,
-    videoSrc: "https://www.youtube.com/embed/LKMJBZGqbAQ",
+    videoSrc: "https://www.youtube.com/embed/LKMJBZGqbAQ?start=16",
     nameEng: "Cinewhoop",
     descriptionEng:
       "Slow and steady, safe to fly close to objects and people, practically indestructible",
@@ -29,7 +29,7 @@ const drones = [
   },
   {
     id: 3,
-    videoSrc: "https://www.youtube.com/embed/_YPhO6OzJAg",
+    videoSrc: "https://www.youtube.com/embed/_YPhO6OzJAg?start=6",
     nameEng: "Cinelifter",
     descriptionEng:
       "Can carry heavy cinematic cameras like RED Komodo, fully protected",
@@ -39,7 +39,7 @@ const drones = [
   },
   {
     id: 4,
-    videoSrc: "https://www.youtube.com/embed/hnnfpxFlS2E",
+    videoSrc: "https://www.youtube.com/embed/hnnfpxFlS2E?start=23",
     nameEng: "Live Broadcast",
     descriptionEng:
       "FPV Drones using the DJI O3 Air Unit and the classic DJI Air 2s drone can transmit 1080p video that can used for live broadcast",
@@ -95,7 +95,7 @@ const Services = () => {
                 >
                   {({ open }) => (
                     <>
-                      <Disclosure.Button className="w-full py-5 mt-2 bg-gray-900 dark:bg-opacity-50 bg-opacity-5 shadow pl-5 flex justify-between">
+                      <Disclosure.Button className="w-full py-5 mt-2 shadow-md bg-gray-50 dark:bg-gray-900 dark:bg-opacity-70 bg-opacity-70  pl-5 flex justify-between">
                         <div></div>
                         <h1 className="text-xl text-center">
                           {context.siteLanguage === "en"

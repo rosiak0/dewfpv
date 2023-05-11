@@ -114,7 +114,7 @@ const Contact = () => {
           <div className="border border-1 border-gray-900 dark:border-gray-50 p-4 w-full md:w-3/5 lg:w-full xl:w-3/5  md:m-auto">
             <form onSubmit={handleSubmit} autoComplete="off">
               <div className="">
-                <label className="mb-2 block font-bold" htmlFor="name">
+                <label className="mb-2 block " htmlFor="name">
                   {context.siteLanguage === "en" ? "name:" : "imię i nazwisko:"}
                 </label>
                 <input
@@ -136,7 +136,7 @@ const Contact = () => {
                   <p className="text-sm text-red-500">{errors.name}</p>
                 )}
               </div>
-              <label className="mb-2 block font-bold " htmlFor="email">
+              <label className="mb-2 block  " htmlFor="email">
                 email:
               </label>
               <input
@@ -157,7 +157,7 @@ const Contact = () => {
               {errors.email && touched.email && (
                 <p className="text-sm text-red-500">{errors.email}</p>
               )}
-              <label className="mb-2 block font-bold" htmlFor="message">
+              <label className="mb-2 block" htmlFor="message">
                 {context.siteLanguage === "en" ? "message:" : "wiadomość:"}
               </label>
               <textarea
@@ -180,8 +180,8 @@ const Contact = () => {
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="w-full border-3 border border-gray-900 dark:border-gray-50 py-2 shadow-sm  text-gray-50 dark:text-gray-900 bg-gray-900 dark:bg-gray-50 font-bold disabled:opacity-30 dark:active:bg-opacity-0 dark:active:text-gray-50 dark:active:border dark:active:border-gray-50 active:bg-opacity-0 active:text-gray-900 active:border active:border-gray-900 duration-200"
-                // className="w-full border-3 border border-gray-900 dark:border-gray-50 py-2 shadow-sm  text-gray-50 dark:text-gray-900 bg-gray-900 dark:bg-gray-50 font-bold disabled:opacity-30 dark:active:bg-gray-900 dark:active:text-gray-50 dark:active:border dark:active:border-gray-50 active:bg-gray-50 active:text-gray-900 active:border active:border-gray-900 duration-200"
+                className="w-full border-3 border border-gray-900 dark:border-gray-50 py-2 shadow-sm  text-gray-50 dark:text-gray-900 bg-gray-900 dark:bg-gray-50 disabled:opacity-30 dark:active:bg-opacity-0 dark:active:text-gray-50 dark:active:border dark:active:border-gray-50 active:bg-opacity-0 active:text-gray-900 active:border active:border-gray-900 duration-200"
+                // className="w-full border-3 border border-gray-900 dark:border-gray-50 py-2 shadow-sm  text-gray-50 dark:text-gray-900 bg-gray-900 dark:bg-gray-50  disabled:opacity-30 dark:active:bg-gray-900 dark:active:text-gray-50 dark:active:border dark:active:border-gray-50 active:bg-gray-50 active:text-gray-900 active:border active:border-gray-900 duration-200"
               >
                 {context.siteLanguage === "en" ? "Send" : "Wyślij"}
               </button>

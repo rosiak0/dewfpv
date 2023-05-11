@@ -69,7 +69,7 @@ const Navbar = () => {
             <div className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-end  flex flex-col lg:h-auto">
               {links.map((link) => (
                 <li
-                  className="hover:font-bold text-lg lg:mx-4 my-2 lg:my-0 "
+                  className="hover:font-bold text-md lg:mx-4 my-2 lg:my-0 "
                   key={link.href}
                 >
                   <div>

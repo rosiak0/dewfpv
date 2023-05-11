@@ -2,7 +2,8 @@ const ShowReel = () => {
   return (
     <div className="w-full xl:w-3/5 m-auto">
       <h2 className="text-center text-xl mb-5">
-        Showreel {new Date().getFullYear()}
+        Showreel
+        {/* Showreel {new Date().getFullYear()} */}
       </h2>
       <iframe
         className="m-auto aspect-video w-full h-auto"

@@ -36,14 +36,14 @@ export default function Home() {
             </p>
             <div className="flex justify-around mb-10">
               <Link href="/services">
-                <button className="w-56 h-10 border border-1 dark:border-gray-50 border-gray-900 active:bg-gray-50 active:text-gray-900 duration-200">
+                <button className="w-56 h-10 border border-1 dark:border-gray-50 border-gray-900 active:bg-gray-900 active:text-gray-50 duration-200">
                   {context.siteLanguage === "en"
                     ? "Explore our options"
                     : "Sprawdź naszą ofertę"}
                 </button>
               </Link>
               <Link href="/contact">
-                <button className="w-56 h-10 border-3 border border-gray-900 dark:border-gray-50 py-2 shadow-sm  text-gray-50 dark:text-gray-900 bg-gray-900 dark:bg-gray-50 font-bold disabled:opacity-30 dark:active:bg-opacity-0 dark:active:text-gray-50 dark:active:border dark:active:border-gray-50 active:bg-opacity-0 active:text-gray-900 active:border active:border-gray-900 duration-200">
+                <button className="w-56 h-10 border-3 border border-gray-900 dark:border-gray-50 py-2 shadow-sm  text-gray-50 dark:text-gray-900 bg-gray-900 dark:bg-gray-50 disabled:opacity-30 dark:active:bg-opacity-0 dark:active:text-gray-50 dark:active:border dark:active:border-gray-50 active:bg-opacity-0 active:text-gray-900 active:border active:border-gray-900 duration-200">
                   {context.siteLanguage === "en" ? "Hire us" : "Zatrudnij nas"}
                 </button>
               </Link>
