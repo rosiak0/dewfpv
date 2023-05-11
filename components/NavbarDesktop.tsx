@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useContext } from "react";
-import LanguageContext from "../context/LanguageContext";
+import { LanguageContext } from "../context/LanguageContext";
 import Socials from "./Socials";
 
 const links = [
