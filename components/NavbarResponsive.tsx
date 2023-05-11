@@ -88,12 +88,8 @@ const Navbar = () => {
                   </div>
                 </li>
               ))}
-              <li>
-                <LanguageSwitch />
-              </li>
-              <li>
-                <ThemeSwitch />
-              </li>
+              <LanguageSwitch />
+              <ThemeSwitch />
 
               {/* <Link href="/">
                 <p className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-green-600 hover:text-white ">
