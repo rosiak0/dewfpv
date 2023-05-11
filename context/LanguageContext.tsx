@@ -1,5 +1,6 @@
-import { createContext } from "react";
-import Language from "../types/Language";
+import { createContext, useEffect, useState } from "react";
+
+type Language = "en" | "pl";
 
 const LanguageContext = createContext<{
   siteLanguage: Language;
@@ -9,4 +10,24 @@ const LanguageContext = createContext<{
   setSiteLanguage: () => {},
 });
 
-export default LanguageContext;
+type LanguageProviderProps = {
+  children: React.ReactNode;
+};
+
+const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
+  const [siteLanguage, setSiteLanguage] = useState<Language>("en");
+
+  useEffect(() => {
+    const userLanguage = navigator.language.toLowerCase();
+    const language = userLanguage === "pl" ? "pl" : "en";
+    setSiteLanguage(language);
+  }, []);
+
+  return (
+    <LanguageContext.Provider value={{ siteLanguage, setSiteLanguage }}>
+      {children}
+    </LanguageContext.Provider>
+  );
+};
+
+export { LanguageContext, LanguageProvider };

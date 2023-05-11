@@ -6,7 +6,7 @@ import { ChevronUpIcon } from "@heroicons/react/20/solid";
 // import PageTitle from "../../components/PageTitle";
 
 import { useContext, useState } from "react";
-import LanguageContext from "../../context/LanguageContext";
+import { LanguageContext } from "../../context/LanguageContext";
 
 const drones = [
   {

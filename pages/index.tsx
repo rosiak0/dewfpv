@@ -2,7 +2,7 @@ import PageWrapper from "../components/PageWrapper";
 import TextWrapper from "../components/TextWrapper";
 // import PageTitle from "../components/PageTitle";
 import ShowReel from "../components/ShowReel";
-import LanguageContext from "../context/LanguageContext";
+import { LanguageContext } from "../context/LanguageContext";
 import { useContext } from "react";
 import Link from "next/link";
 import Head from "next/head";

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useContext, useState } from "react";
-import LanguageContext from "../context/LanguageContext";
+import { LanguageContext } from "../context/LanguageContext";
 import Socials from "./Socials";
 import LanguageSwitch from "./LanguageSwitch";
 import ThemeSwitch from "./ThemeSwitch";
@@ -22,7 +22,7 @@ const Navbar = () => {
     setActive(!active);
   };
   return (
-    <nav className="z-30 fixed w-full shadow-md  bg-gray-50 dark:bg-gray-900 ">
+    <nav className="z-30 fixed w-full shadow-md bg-gray-50 dark:bg-gray-900 dark:bg-opacity-70 bg-opacity-70 backdrop-blur-md">
       <div className="max-w-full lg:w-3/5 lg:mx-auto mx-3 py-4 ">
         <ul className="flex flex-wrap justify-between">
           <li>

@@ -3,7 +3,7 @@ import TextWrapper from "../../components/TextWrapper";
 import Head from "next/head";
 // import PageTitle from "../../components/PageTitle";
 import { useContext } from "react";
-import LanguageContext from "../../context/LanguageContext";
+import { LanguageContext } from "../../context/LanguageContext";
 import { useFormik } from "formik";
 import * as yup from "yup";
 import Socials from "../../components/Socials";
