@@ -77,7 +77,7 @@ const Services = () => {
               ? "Check out the gear we have and the possibilities it gives"
               : "Sprawdź, jakie możliwości daje sprzęt, który posiadamy"}
           </h1>
-          <p className="pb-20">
+          <p className="pb-10">
             {context.siteLanguage === "en"
               ? "We offer a range of drones that can help you fulfill your vision. We understand that different projects require different types of drones, and that's why we've got you covered with a variety of options to choose from."
               : "Oferujemy gamę dronów, które pomogą Ci zrealizować Twoją wizję. Rozumiemy, że różne projekty wymagają różnych typów dronów, dlatego mamy dla Ciebie wiele opcji do wyboru."}
@@ -95,7 +95,7 @@ const Services = () => {
                 >
                   {({ open }) => (
                     <>
-                      <Disclosure.Button className="w-full py-5 mt-2 shadow-md bg-gray-50 dark:bg-gray-900 dark:bg-opacity-70 bg-opacity-70  pl-5 flex justify-between">
+                      <Disclosure.Button className="w-full py-3 mt-2 shadow-md bg-gray-50 dark:bg-gray-900 dark:bg-opacity-70 bg-opacity-70  pl-5 flex justify-between">
                         <div></div>
                         <h1 className="text-xl text-center">
                           {context.siteLanguage === "en"
@@ -109,22 +109,23 @@ const Services = () => {
                         />
                       </Disclosure.Button>
                       <Disclosure.Panel className="p-5">
-                        <p className="mb-5">
+                        <p className="mb-3">
                           {context.siteLanguage === "en"
                             ? drone.descriptionEng
                             : drone.descriptionPL}
                         </p>
-
-                        <iframe
-                          className="m-auto aspect-video w-full h-auto"
-                          width="560"
-                          height="315"
-                          src={drone.videoSrc}
-                          title="YouTube video player"
-                          frameBorder="0"
-                          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                          allowFullScreen
-                        ></iframe>
+                        <div className="w-full sm:w-3/5 m-auto">
+                          <iframe
+                            className="m-auto aspect-video w-full h-auto"
+                            width="560"
+                            height="315"
+                            src={drone.videoSrc}
+                            title="YouTube video player"
+                            frameBorder="0"
+                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowFullScreen
+                          ></iframe>
+                        </div>
                       </Disclosure.Panel>
                     </>
                   )}
