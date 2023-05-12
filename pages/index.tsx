@@ -38,7 +38,7 @@ export default function Home() {
               <Link href="/services">
                 <button className="w-56 h-10 border border-1 dark:border-gray-50 border-gray-900 active:bg-gray-900 dark:active:bg-gray-50 dark:active:text-gray-900 active:text-gray-50 duration-200">
                   {context.siteLanguage === "en"
-                    ? "Explore our options"
+                    ? "Explore our offer"
                     : "Sprawdź naszą ofertę"}
                 </button>
               </Link>

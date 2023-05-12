@@ -186,10 +186,15 @@ const Contact = () => {
                 className="w-full border-3 border border-gray-900 dark:border-gray-50 py-2 shadow-sm  text-gray-50 dark:text-gray-900 bg-gray-900 dark:bg-gray-50 disabled:opacity-30 dark:active:bg-opacity-0 dark:active:text-gray-50 dark:active:border dark:active:border-gray-50 active:bg-opacity-0 active:text-gray-900 active:border active:border-gray-900 duration-200"
                 // className="w-full border-3 border border-gray-900 dark:border-gray-50 py-2 shadow-sm  text-gray-50 dark:text-gray-900 bg-gray-900 dark:bg-gray-50  disabled:opacity-30 dark:active:bg-gray-900 dark:active:text-gray-50 dark:active:border dark:active:border-gray-50 active:bg-gray-50 active:text-gray-900 active:border active:border-gray-900 duration-200"
               >
-                {context.siteLanguage === "en" ? "Send" : "Wyślij"}
+                {!isSubmitting
+                  ? context.siteLanguage === "en"
+                    ? "Send"
+                    : "Wyślij"
+                  : context.siteLanguage === "en"
+                  ? "Sending"
+                  : "Wysyłam"}
               </button>
             </form>
-            {isSubmitting && <p>Submitting</p>}
           </div>
         </TextWrapper>
       </PageWrapper>
