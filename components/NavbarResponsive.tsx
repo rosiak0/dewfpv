@@ -37,7 +37,6 @@ const Navbar = () => {
               <Socials />
             </div>
           </li>
-
           <li>
             <button
               className=" inline-flex hover:bg-opacity-50 hover:bg-gray-900 dark:hover:bg-gray-50 rounded lg:hidden text-gray-900 dark:text-gray-50 ml-auto hover:text-gray-50 dark:hover:text-gray-900 outline-none"

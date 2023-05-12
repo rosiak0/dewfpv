@@ -1,12 +1,13 @@
 import PageWrapper from "../../components/PageWrapper";
 import TextWrapper from "../../components/TextWrapper";
 import Head from "next/head";
+import Socials from "../../components/Socials";
 // import PageTitle from "../../components/PageTitle";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { LanguageContext } from "../../context/LanguageContext";
 import { useFormik } from "formik";
 import * as yup from "yup";
-import Socials from "../../components/Socials";
+import { sendContactForm } from "../../lib/api";
 
 const contactSchema = (lang: string) =>
   yup.object().shape({
@@ -34,15 +35,17 @@ interface ContactFormValues {
   message: string;
 }
 
-const onSubmit = (values: any, actions: any) => {
-  // e.preventDefault();
+const onSubmit = async (values: any, actions: any) => {
+  try {
+    await sendContactForm(values);
+  } catch (error) {
+    console.log("error");
 
-  // emailjs.sendForm('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', form.current, 'YOUR_PUBLIC_KEY')
-  //   .then((result) => {
-  //       console.log(result.text);
-  //   }, (error) => {
-  //       console.log(error.text);
+    return error;
+  }
 
+  console.log("click");
+  // const
   actions.resetForm();
 };
 
@@ -186,6 +189,7 @@ const Contact = () => {
                 {context.siteLanguage === "en" ? "Send" : "Wyślij"}
               </button>
             </form>
+            {isSubmitting && <p>Submitting</p>}
           </div>
         </TextWrapper>
       </PageWrapper>
