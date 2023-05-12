@@ -6,7 +6,7 @@ const LanguageContext = createContext<{
   siteLanguage: Language;
   setSiteLanguage: React.Dispatch<React.SetStateAction<Language>>;
 }>({
-  siteLanguage: "en",
+  siteLanguage: "pl",
   setSiteLanguage: () => {},
 });
 
@@ -15,7 +15,7 @@ type LanguageProviderProps = {
 };
 
 const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
-  const [siteLanguage, setSiteLanguage] = useState<Language>("en");
+  const [siteLanguage, setSiteLanguage] = useState<Language>("pl");
 
   useEffect(() => {
     const userLanguage = navigator.language.toLowerCase();
