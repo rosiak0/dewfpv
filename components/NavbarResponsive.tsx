@@ -30,7 +30,7 @@ const Navbar = () => {
               <Link href="/">
                 <p className="inline-flex items-center">
                   <span className="text-xl text-gray-900 mr-5 dark:text-gray-50 font-bold uppercase tracking-wide">
-                    WYSOKO
+                    DEW AERIALS
                   </span>
                 </p>
               </Link>
