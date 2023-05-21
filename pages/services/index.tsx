@@ -16,15 +16,15 @@ const drones = [
     descriptionEng: [
       <p>Quick and agile</p>,
       <p>Max speed 180km/h</p>,
-      <p>GoPro Hero 11 footage<p/>,
- <p>Stabilization without any additional charge</p>,
+      <p>GoPro Hero 11 footage</p>,
+      <p>Stabilization without any additional charge</p>,
     ],
     namePL: "5-calowy dron z GoPro",
     descriptionPL: [
       <p>Szybki i zwinny</p>,
       <p>Prędkość maksymalna 180km/h</p>,
       <p>Nagrania z GoPro Hero 11</p>,
- <p>Sablilizacja w cenie</p>,
+      <p>Sablilizacja w cenie</p>,
     ],
   },
   {
@@ -33,16 +33,16 @@ const drones = [
     nameEng: "Cinewhoop",
     descriptionEng: [
       <p>Slow and steady</p>,
-      <p>safe to fly close to objects and people</p>,
-      <p>GoPro Hero 11 footage<p/>,
- <p>Stabilization without any additional charge</p>,
+      <p>Safe to fly close to objects and people</p>,
+      <p>GoPro Hero 11 footage</p>,
+      <p>Stabilization without any additional charge</p>,
     ],
     namePL: "Cinewhoop",
     descriptionPL: [
       <p>Do wolnych i precyzyjnych lotów</p>,
       <p>Można nim bezpiecznie latać blisko obieków i ludzi</p>,
       <p>Nagrania z GoPro Hero 11</p>,
- <p>Sablilizacja w cenie</p>,
+      <p>Sablilizacja w cenie</p>,
     ],
   },
   // {
@@ -135,16 +135,16 @@ const Services = () => {
                         <ChevronUpIcon
                           className={`${
                             open ? "transform rotate-180" : ""
-                          } w-5 h-5 duration-200`}
+                          } w-5 h-5 duration-200 mr-4`}
                         />
                       </Disclosure.Button>
-                      <Disclosure.Panel className="pt-5 bg-gray-50 dark:bg-gray-900 dark:bg-opacity-40 bg-opacity-40 shadow-md backdrop-blur-sm">
-                        <p className="mb-3">
+                      <Disclosure.Panel className=" bg-gray-50 dark:bg-gray-900 dark:bg-opacity-40 bg-opacity-40 shadow-md backdrop-blur-sm lg:flex lg:justify-between lg:items-center">
+                        <p className="mb-3 p-4 lg:m-auto lg:w-1/2">
                           {context.siteLanguage === "en"
                             ? drone.descriptionEng
                             : drone.descriptionPL}
                         </p>
-                        <div className="w-full sm:w-3/5 m-auto">
+                        <div className="w-full m-auto lg:w-1/2 lg:m-0">
                           <iframe
                             className="m-auto aspect-video w-full h-auto"
                             width="560"
