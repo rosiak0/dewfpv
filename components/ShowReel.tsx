@@ -1,6 +1,6 @@
 const ShowReel = () => {
   return (
-    <div className="w-full sm:w-3/5 lg:w-full m-auto">
+    <div className="w-full sm:w-3/5 m-auto">
       <h2 className="text-center text-xl mb-5">
         Showreel
         {/* Showreel {new Date().getFullYear()} */}
