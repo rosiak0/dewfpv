@@ -16,15 +16,15 @@ const drones = [
     descriptionEng: [
       <p>Quick and agile</p>,
       <p>Max speed 180km/h</p>,
-      <p>
-        GoPro Hero 11 footage + stabilization without any additional charge
-      </p>,
+      <p>GoPro Hero 11 footage<p/>,
+ <p>Stabilization without any additional charge</p>,
     ],
     namePL: "5-calowy dron z GoPro",
     descriptionPL: [
       <p>Szybki i zwinny</p>,
       <p>Prędkość maksymalna 180km/h</p>,
-      <p>Nagrania z GoPro Hero 11 + stablilizacja w cenie</p>,
+      <p>Nagrania z GoPro Hero 11</p>,
+ <p>Sablilizacja w cenie</p>,
     ],
   },
   {
@@ -34,15 +34,15 @@ const drones = [
     descriptionEng: [
       <p>Slow and steady</p>,
       <p>safe to fly close to objects and people</p>,
-      <p>
-        GoPro Hero 11 footage + stabilization without any additional charge
-      </p>,
+      <p>GoPro Hero 11 footage<p/>,
+ <p>Stabilization without any additional charge</p>,
     ],
     namePL: "Cinewhoop",
     descriptionPL: [
       <p>Do wolnych i precyzyjnych lotów</p>,
       <p>Można nim bezpiecznie latać blisko obieków i ludzi</p>,
-      <p>Nagrania z GoPro Hero 11 + stablilizacja w cenie</p>,
+      <p>Nagrania z GoPro Hero 11</p>,
+ <p>Sablilizacja w cenie</p>,
     ],
   },
   // {
@@ -138,7 +138,7 @@ const Services = () => {
                           } w-5 h-5 duration-200`}
                         />
                       </Disclosure.Button>
-                      <Disclosure.Panel className="p-5 bg-gray-50 dark:bg-gray-900 dark:bg-opacity-40 bg-opacity-40 shadow-md backdrop-blur-sm">
+                      <Disclosure.Panel className="pt-5 bg-gray-50 dark:bg-gray-900 dark:bg-opacity-40 bg-opacity-40 shadow-md backdrop-blur-sm">
                         <p className="mb-3">
                           {context.siteLanguage === "en"
                             ? drone.descriptionEng
