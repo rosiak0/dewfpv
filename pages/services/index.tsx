@@ -138,7 +138,7 @@ const Services = () => {
                           } w-5 h-5 duration-200`}
                         />
                       </Disclosure.Button>
-                      <Disclosure.Panel className="p-5 bg-gray-50 dark:bg-gray-900 dark:bg-opacity-40 bg-opacity-40 shadow-md backdrop-blur-sm">
+                      <Disclosure.Panel className="pt-5 bg-gray-50 dark:bg-gray-900 dark:bg-opacity-40 bg-opacity-40 shadow-md backdrop-blur-sm">
                         <p className="mb-3">
                           {context.siteLanguage === "en"
                             ? drone.descriptionEng
