@@ -33,7 +33,7 @@ function ThemedImage() {
 
   return (
     <Image
-      className="-z-10 opacity-70 object-cover  top-0 right-0 fixed h-screen w-full overflow-hidden"
+      className="-z-10 opacity-70 object-cover top-0 right-0 fixed h-screen w-full overflow-hidden"
       src={src}
       width={3840}
       height={2160}

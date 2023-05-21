@@ -8,6 +8,7 @@ const Layout = ({ children }: any) => {
       <ThemedImage />
       <Navbar />
       <main>{children}</main>
+
       <Footer />
     </>
   );
