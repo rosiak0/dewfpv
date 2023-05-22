@@ -7,17 +7,31 @@ import { LanguageContext } from "../../context/LanguageContext";
 
 function ThemedImage() {
   const context = useContext(LanguageContext);
-  const [mounted, setMounted] = useState(false);
-  const { resolvedTheme } = useTheme();
+  const { theme } = useTheme();
+  const [currentTheme, setCurrentTheme] = useState(theme);
+
   useEffect(() => {
-    setMounted(true);
-  }, []);
+    console.log(theme);
 
-  if (!mounted) {
-    return null;
+    if (!currentTheme) {
+      setCurrentTheme("dark");
+    } else {
+      setCurrentTheme(theme);
+    }
+  }, [currentTheme, theme]);
+
+  let src = currentTheme === "dark" ? darkbg : lightbg;
+
+  switch (currentTheme) {
+    case "light":
+      src = lightbg;
+      break;
+    case "dark":
+      src = darkbg;
+      break;
+    default:
+      break;
   }
-
-  let src = resolvedTheme === "light" ? lightbg : darkbg;
 
   return (
     <Image
