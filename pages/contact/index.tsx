@@ -1,4 +1,4 @@
-import TextWrapper from "../../components/TextWrapper";
+import TextWrapper from "../../components/layout/TextWrapper";
 import Head from "next/head";
 import Socials from "../../components/Socials";
 // import PageTitle from "../../components/PageTitle";

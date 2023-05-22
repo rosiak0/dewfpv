@@ -1,9 +1,9 @@
 import Image from "next/image";
-import darkbg from "../public/bg dark.png";
-import lightbg from "../public/bg light.png";
+import darkbg from "../../public/bg dark.png";
+import lightbg from "../../public/bg light.png";
 import { useTheme } from "next-themes";
 import { useContext, useState, useEffect } from "react";
-import { LanguageContext } from "../context/LanguageContext";
+import { LanguageContext } from "../../context/LanguageContext";
 
 function ThemedImage() {
   const context = useContext(LanguageContext);

@@ -1,4 +1,4 @@
-import TextWrapper from "../components/TextWrapper";
+import TextWrapper from "../components/layout/TextWrapper";
 import ShowReel from "../components/ShowReel";
 import { LanguageContext } from "../context/LanguageContext";
 import { useContext } from "react";

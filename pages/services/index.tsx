@@ -1,4 +1,4 @@
-import TextWrapper from "../../components/TextWrapper";
+import TextWrapper from "../../components/layout/TextWrapper";
 import Head from "next/head";
 import { Disclosure } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/20/solid";

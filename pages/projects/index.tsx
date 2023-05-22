@@ -1,4 +1,4 @@
-import TextWrapper from "../../components/TextWrapper";
+import TextWrapper from "../../components/layout/TextWrapper";
 import Head from "next/head";
 // import PageTitle from "../../components/PageTitle";
 import { useContext } from "react";

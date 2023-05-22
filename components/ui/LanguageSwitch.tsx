@@ -1,5 +1,5 @@
 import { useContext } from "react";
-import { LanguageContext } from "../context/LanguageContext";
+import { LanguageContext } from "../../context/LanguageContext";
 import { CircleFlag } from "react-circle-flags";
 
 const flagUK = <CircleFlag countryCode="gb" className="h-4 flex text-center" />;
