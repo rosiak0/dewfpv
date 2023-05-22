@@ -1,5 +1,4 @@
 import TextWrapper from "../components/TextWrapper";
-
 import ShowReel from "../components/ShowReel";
 import { LanguageContext } from "../context/LanguageContext";
 import { useContext } from "react";
@@ -23,7 +22,6 @@ export default function Home() {
           }
         />
       </Head>
-
       <TextWrapper>
         <ShowReel />
         <p className="md:text-base text-sm my-10">
