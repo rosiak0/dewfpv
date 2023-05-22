@@ -2,7 +2,6 @@ import TextWrapper from "../../components/layout/TextWrapper";
 import Head from "next/head";
 import { Disclosure } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/20/solid";
-// import PageTitle from "../../components/PageTitle";
 
 import { useContext, useState } from "react";
 import { LanguageContext } from "../../context/LanguageContext";

@@ -1,4 +1,4 @@
-import { createContext, useEffect, useState } from "react";
+import { createContext, useState } from "react";
 
 type Language = "en" | "pl";
 
@@ -16,12 +16,6 @@ type LanguageProviderProps = {
 
 const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
   const [siteLanguage, setSiteLanguage] = useState<Language>("pl");
-
-  useEffect(() => {
-    const userLanguage = navigator.language.toLowerCase();
-    const language = userLanguage === "pl" ? "pl" : "en";
-    setSiteLanguage(language);
-  }, []);
 
   return (
     <LanguageContext.Provider value={{ siteLanguage, setSiteLanguage }}>
