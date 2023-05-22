@@ -96,7 +96,6 @@ const Services = () => {
           }
         />
       </Head>
-
       <TextWrapper>
         <h1 className="text-2xl mb-10">
           {context.siteLanguage === "en"
@@ -114,7 +113,6 @@ const Services = () => {
               <Disclosure
                 as="div"
                 className="w-full"
-                // open={activePanel === drone.id}
                 onChange={() =>
                   setActivePanel(activePanel === drone.id ? null : drone.id)
                 }

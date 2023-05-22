@@ -29,7 +29,7 @@ const Navbar = () => {
             <div className="inline-flex">
               <Link href="/">
                 <p className="inline-flex items-center">
-                  <span className="text-xl text-gray-900 mr-5 dark:text-gray-50 font-bold uppercase tracking-wide">
+                  <span className="text-xl text-gray-900 mr-5 dark:text-gray-50 font-bold uppercase tracking-wide transition-all duration-200 hover:scale-105">
                     DEW AERIALS
                   </span>
                 </p>
@@ -67,7 +67,7 @@ const Navbar = () => {
             <div className="lg:inline-flex lg:flex-row lg:ml-auto lg:w-auto w-full lg:items-center items-end  flex flex-col lg:h-auto">
               {links.map((link) => (
                 <li
-                  className="hover:font-bold text-md lg:mx-4 my-2 lg:my-0 "
+                  className="transition-all hover:scale-105 text-md lg:mx-4 my-2 lg:my-0 hover:duration-200 "
                   key={link.href}
                 >
                   <div>
@@ -75,7 +75,7 @@ const Navbar = () => {
                       className={`${
                         link.href === path
                           ? "font-bold "
-                          : "text-gray-900 dark:text-gray-50 hover:duration-200"
+                          : "text-gray-900 dark:text-gray-50 "
                       } `}
                       href={link.href}
                     >

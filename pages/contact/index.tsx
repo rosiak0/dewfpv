@@ -99,12 +99,18 @@ const Contact = () => {
             : "Jesteśmy zainteresowani współpracą z Tobą i realizacją Twoich pomysłów. Skontaktuj się z nami telefonicznie, mailowo lub za pomocą naszego formularza online, aby omówić swoje projekty. Jesteśmy gotowi dostarczyć spersonalizowane rozwiązania, które spełnią Twoje potrzeby i przekroczą Twoje oczekiwania"}
         </p>
         <address className="mb-8">
-          <a href="mailto:maciejrosa1@gmail.com" className="not-italic mb-5">
+          <a
+            href="mailto:maciejrosa1@gmail.com"
+            className="not-italic mb-5 transition-all duration-200 hover:font-bold"
+          >
             maciejrosa1@gmail.com
           </a>
           <br />
           <br />
-          <a href="tel:+48695227141" className="not-italic ">
+          <a
+            href="tel:+48695227141"
+            className="not-italic transition-all duration-200 hover:font-bold "
+          >
             +48 695 227 141
           </a>
           <br />

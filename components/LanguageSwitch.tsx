@@ -13,7 +13,7 @@ const LanguageSwitch = () => {
       onClick={() =>
         context.setSiteLanguage(context.siteLanguage === "en" ? "pl" : "en")
       }
-      className="my-2 lg:my-0 text-lg transition-all lg:mx-2 text-gray-900 dark:text-gray-50 transform duration-200 lg:w-10 hover:font-bold lg:flex lg:justify-center"
+      className="my-2 lg:my-0 text-lg transition-all lg:mx-2 text-gray-900 dark:text-gray-50 transform hover:scale-110 duration-200 lg:w-10 hover:font-bold lg:flex lg:justify-center"
     >
       {context.siteLanguage === "pl" ? flagUK : flagPL}
     </button>
