@@ -58,7 +58,6 @@ const Navbar = () => {
               </svg>
             </button>
           </li>
-          {/*Note that in this div we will use p ternary operator to decide whether or not to display the content of the div  */}
           <div
             className={`${
               active ? "" : "hidden"
@@ -89,27 +88,6 @@ const Navbar = () => {
               ))}
               <LanguageSwitch />
               <ThemeSwitch />
-
-              {/* <Link href="/">
-                <p className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-green-600 hover:text-white ">
-                  Home
-                </p>
-              </Link>
-              <Link href="/services">
-                <p className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-green-600 hover:text-white">
-                  Services
-                </p>
-              </Link>
-              <Link href="/about">
-                <p className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-green-600 hover:text-white">
-                  About us
-                </p>
-              </Link>
-              <Link href="/contact">
-                <p className="lg:inline-flex lg:w-auto w-full px-3 py-2 rounded text-white font-bold items-center justify-center hover:bg-green-600 hover:text-white">
-                  Contact
-                </p>
-              </Link> */}
             </div>
           </div>
         </ul>
