@@ -24,24 +24,26 @@ export default function Home() {
       </Head>
       <TextWrapper>
         <ShowReel />
-        <p className="md:text-base text-sm my-10">
-          {context.siteLanguage === "en"
-            ? `Welcome to Dew Aerials, where we specialize in FPV drone videography. With ${experience} years of experience, we deliver stunning shots for commercial, real estate, and action sports videos. Our passion and cutting-edge techniques push the boundaries of what's possible. Choose Dew Aerials and take your vision to new heights.`
-            : `Witaj w Dew Aerials, jesteśmy specjalistami w dziedzinie filmowania za pomocą dronów FPV. Posiadamy ${experience}-letnie doświadczenie w branży, dostarczając oszałamiające ujęcia dla filmów komercyjnych, nieruchomości oraz sportów ekstremalnych. Nasza pasja oraz innowacyjne techniki pozwalają nam przekraczać granice możliwości. Wybierz Dew Aerials i osiągnij nowe wysokości.`}
-        </p>
-        <div className="flex justify-around mb-10 ">
-          <Link href="/services">
-            <button className="w-56 h-10 border border-1 dark:border-gray-50 border-gray-900 active:bg-gray-900 dark:active:bg-gray-50 dark:active:text-gray-900 active:text-gray-50 duration-200">
-              {context.siteLanguage === "en"
-                ? "Explore our offer"
-                : "Sprawdź naszą ofertę"}
-            </button>
-          </Link>
-          <Link href="/contact">
-            <button className="w-56 h-10 border-3 border border-gray-900 dark:border-gray-50 py-2 shadow-sm  text-gray-50 dark:text-gray-900 bg-gray-900 dark:bg-gray-50 disabled:opacity-30 dark:active:bg-opacity-0 dark:active:text-gray-50 dark:active:border dark:active:border-gray-50 active:bg-opacity-0 active:text-gray-900 active:border active:border-gray-900 duration-200">
-              {context.siteLanguage === "en" ? "Hire us" : "Zatrudnij nas"}
-            </button>
-          </Link>
+        <div className="lg:w-1/2 w-full lg:-order-1 lg:p-4">
+          <p className="md:text-base text-sm my-10">
+            {context.siteLanguage === "en"
+              ? `Welcome to Dew Aerials, where we specialize in FPV drone videography. With ${experience} years of experience, we deliver stunning shots for commercial, real estate, and action sports videos. Our passion and cutting-edge techniques push the boundaries of what's possible. Choose Dew Aerials and take your vision to new heights.`
+              : `Witaj w Dew Aerials, jesteśmy specjalistami w dziedzinie filmowania za pomocą dronów FPV. Posiadamy ${experience}-letnie doświadczenie w branży, dostarczając oszałamiające ujęcia dla filmów komercyjnych, nieruchomości oraz sportów ekstremalnych. Nasza pasja oraz innowacyjne techniki pozwalają nam przekraczać granice możliwości. Wybierz Dew Aerials i osiągnij nowe wysokości.`}
+          </p>
+          <div className="flex justify-around mb-10">
+            <Link href="/services">
+              <button className="w-44 h-10 border border-1 dark:border-gray-50 border-gray-900 active:bg-gray-900 dark:active:bg-gray-50 dark:active:text-gray-900 active:text-gray-50 duration-200">
+                {context.siteLanguage === "en"
+                  ? "Explore our offer"
+                  : "Sprawdź naszą ofertę"}
+              </button>
+            </Link>
+            <Link href="/contact">
+              <button className="w-44 h-10 border-3 border border-gray-900 dark:border-gray-50 py-2 shadow-sm  text-gray-50 dark:text-gray-900 bg-gray-900 dark:bg-gray-50 disabled:opacity-30 dark:active:bg-opacity-0 dark:active:text-gray-50 dark:active:border dark:active:border-gray-50 active:bg-opacity-0 active:text-gray-900 active:border active:border-gray-900 duration-200">
+                {context.siteLanguage === "en" ? "Hire us" : "Zatrudnij nas"}
+              </button>
+            </Link>
+          </div>
         </div>
       </TextWrapper>
     </>
