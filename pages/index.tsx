@@ -30,7 +30,7 @@ export default function Home() {
               ? `Welcome to Dew Aerials, where we specialize in FPV drone videography. With ${experience} years of experience, we deliver stunning shots for commercial, real estate, and action sports videos. Our passion and cutting-edge techniques push the boundaries of what's possible. Choose Dew Aerials and take your vision to new heights.`
               : `Witaj w Dew Aerials, jesteśmy specjalistami w dziedzinie filmowania za pomocą dronów FPV. Posiadamy ${experience}-letnie doświadczenie w branży, dostarczając oszałamiające ujęcia dla filmów komercyjnych, nieruchomości oraz sportów ekstremalnych. Nasza pasja oraz innowacyjne techniki pozwalają nam przekraczać granice możliwości. Wybierz Dew Aerials i osiągnij nowe wysokości.`}
           </p>
-          <div className="flex justify-around mb-10">
+          <div className="flex justify-around pb-10">
             <Link href="/services">
               <button className="w-44 h-10 border border-1 dark:border-gray-50 border-gray-900 active:bg-gray-900 dark:active:bg-gray-50 dark:active:text-gray-900 active:text-gray-50 duration-200">
                 {context.siteLanguage === "en"
