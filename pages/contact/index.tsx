@@ -88,38 +88,36 @@ const Contact = () => {
         />
       </Head>
 
-      {/* <PageTitle>
-        {context.siteLanguage === "en" ? "Contact" : "Kontakt"}
-      </PageTitle> */}
       <TextWrapper>
-        <h1 className="text-xl pb-3">Dew FPV</h1>
-        <p className="pb-10">
-          {context.siteLanguage === "en"
-            ? "We're excited to collaborate with you and make your ideas a reality. Contact us via phone, email, or our online form to discuss your project. We are ready to provide customized solutions that meet your needs and exceed your expectations."
-            : "Jesteśmy zainteresowani współpracą z Tobą i realizacją Twoich pomysłów. Skontaktuj się z nami telefonicznie, mailowo lub za pomocą naszego formularza online, aby omówić swoje projekty. Jesteśmy gotowi dostarczyć spersonalizowane rozwiązania, które spełnią Twoje potrzeby i przekroczą Twoje oczekiwania"}
-        </p>
-        <address className="mb-8">
-          <a
-            href="mailto:maciejrosa1@gmail.com"
-            className="not-italic mb-5 transition-all duration-200 hover:font-bold"
-          >
-            maciejrosa1@gmail.com
-          </a>
-          <br />
-          <br />
-          <a
-            href="tel:+48695227141"
-            className="not-italic transition-all duration-200 hover:font-bold "
-          >
-            +48 695 227 141
-          </a>
-          <br />
-          <div className="mt-6">
-            <Socials />
-          </div>
-        </address>
-
-        <div className="border border-1 border-gray-900 dark:border-gray-50 p-4 w-full md:w-3/5 lg:w-full xl:w-3/5  md:m-auto">
+        <div className="lg:w-1/3">
+          <h1 className="text-xl pb-3">Dew FPV</h1>
+          <p className="pb-10">
+            {context.siteLanguage === "en"
+              ? "We're excited to collaborate with you and make your ideas a reality. Contact us via phone, email, or our online form to discuss your project. We are ready to provide customized solutions that meet your needs and exceed your expectations."
+              : "Jesteśmy zainteresowani współpracą z Tobą i realizacją Twoich pomysłów. Skontaktuj się z nami telefonicznie, mailowo lub za pomocą naszego formularza online, aby omówić swoje projekty. Jesteśmy gotowi dostarczyć spersonalizowane rozwiązania, które spełnią Twoje potrzeby i przekroczą Twoje oczekiwania"}
+          </p>
+          <address className="mb-8">
+            <a
+              href="mailto:maciejrosa1@gmail.com"
+              className="not-italic mb-5 transition-all duration-200 hover:font-bold"
+            >
+              maciejrosa1@gmail.com
+            </a>
+            <br />
+            <br />
+            <a
+              href="tel:+48695227141"
+              className="not-italic transition-all duration-200 hover:font-bold "
+            >
+              +48 695 227 141
+            </a>
+            <br />
+            <div className="mt-6">
+              <Socials />
+            </div>
+          </address>
+        </div>
+        <div className="border border-1 border-gray-900 dark:border-gray-50 p-4 w-full md:w-3/5 lg:w-2/3 xl:w-3/5  md:m-auto">
           <form onSubmit={handleSubmit} autoComplete="off">
             <div className="">
               <label className="mb-2 block " htmlFor="name">

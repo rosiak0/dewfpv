@@ -96,17 +96,19 @@ const Services = () => {
         />
       </Head>
       <TextWrapper>
-        <h1 className="text-2xl mb-10">
-          {context.siteLanguage === "en"
-            ? "Check out the gear we have and the possibilities it gives"
-            : "Sprawdź, jakie możliwości daje sprzęt, który posiadamy"}
-        </h1>
-        <p className="pb-10">
-          {context.siteLanguage === "en"
-            ? "We offer a range of drones that can help you fulfill your vision. We understand that different projects require different types of drones, and that's why we've got you covered with a variety of options to choose from."
-            : "Oferujemy gamę dronów, które pomogą Ci zrealizować Twoją wizję. Rozumiemy, że różne projekty wymagają różnych typów dronów, dlatego mamy dla Ciebie wiele opcji do wyboru."}
-        </p>
-        <ul>
+        <div className="lg:w-1/3">
+          <h1 className="text-2xl mb-10">
+            {context.siteLanguage === "en"
+              ? "Check out the gear we have and the possibilities it gives"
+              : "Sprawdź, jakie możliwości daje sprzęt, który posiadamy"}
+          </h1>
+          <p className="pb-10">
+            {context.siteLanguage === "en"
+              ? "We offer a range of drones that can help you fulfill your vision. We understand that different projects require different types of drones, and that's why we've got you covered with a variety of options to choose from."
+              : "Oferujemy gamę dronów, które pomogą Ci zrealizować Twoją wizję. Rozumiemy, że różne projekty wymagają różnych typów dronów, dlatego mamy dla Ciebie wiele opcji do wyboru."}
+          </p>
+        </div>
+        <ul className="lg:w-2/3">
           {drones.map((drone) => (
             <li key={drone.id}>
               <Disclosure
