@@ -17,7 +17,7 @@ const drones = [
       <p>GoPro Hero 11 footage</p>,
       <p>Stabilization without any additional charge</p>,
     ],
-    namePL: "5-calowy dron z GoPro",
+    namePL: "5-calowy dron",
     descriptionPL: [
       <p>Szybki i zwinny</p>,
       <p>Prędkość maksymalna 180km/h</p>,
@@ -96,7 +96,7 @@ const Services = () => {
         />
       </Head>
       <TextWrapper>
-        <div className="lg:w-1/3">
+        <div className="">
           <h1 className="text-2xl mb-10">
             {context.siteLanguage === "en"
               ? "Check out the gear we have and the possibilities it gives"
@@ -108,7 +108,7 @@ const Services = () => {
               : "Oferujemy gamę dronów, które pomogą Ci zrealizować Twoją wizję. Rozumiemy, że różne projekty wymagają różnych typów dronów, dlatego mamy dla Ciebie wiele opcji do wyboru."}
           </p>
         </div>
-        <ul className="lg:w-2/3">
+        <ul className="">
           {drones.map((drone) => (
             <li key={drone.id}>
               <Disclosure

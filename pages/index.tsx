@@ -24,7 +24,7 @@ export default function Home() {
       </Head>
       <TextWrapper>
         <ShowReel />
-        <div className="lg:w-1/2 w-full lg:-order-1 lg:p-4">
+        <div className=" w-full lg:p-4">
           <p className="md:text-base text-sm my-10">
             {context.siteLanguage === "en"
               ? `Welcome to Dew Aerials, where we specialize in FPV drone videography. With ${experience} years of experience, we deliver stunning shots for commercial, real estate, and action sports videos. Our passion and cutting-edge techniques push the boundaries of what's possible. Choose Dew Aerials and take your vision to new heights.`
@@ -35,7 +35,7 @@ export default function Home() {
               <button className="w-44 h-10 border border-1 dark:border-gray-50 border-gray-900 active:bg-gray-900 dark:active:bg-gray-50 dark:active:text-gray-900 active:text-gray-50 duration-200">
                 {context.siteLanguage === "en"
                   ? "Explore our offer"
-                  : "Sprawdź naszą ofertę"}
+                  : "Sprawdź ofertę"}
               </button>
             </Link>
             <Link href="/contact">

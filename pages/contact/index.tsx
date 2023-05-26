@@ -89,7 +89,7 @@ const Contact = () => {
       </Head>
 
       <TextWrapper>
-        <div className="lg:w-1/3">
+        <div className="">
           <h1 className="text-xl pb-3">Dew FPV</h1>
           <p className="pb-10">
             {context.siteLanguage === "en"
@@ -117,7 +117,7 @@ const Contact = () => {
             </div>
           </address>
         </div>
-        <div className="border border-1 border-gray-900 dark:border-gray-50 p-4 w-full md:w-3/5 lg:w-2/3 xl:w-3/5  md:m-auto">
+        <div className="border border-1 border-gray-900 dark:border-gray-50 p-4 w-full md:w-3/5 lg:w-2/3 xl:w-3/5 md:m-auto">
           <form onSubmit={handleSubmit} autoComplete="off">
             <div className="">
               <label className="mb-2 block " htmlFor="name">
