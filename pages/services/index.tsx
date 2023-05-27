@@ -1,5 +1,6 @@
 import TextWrapper from "../../components/layout/TextWrapper";
 import Head from "next/head";
+import { motion } from "framer-motion";
 import { Disclosure } from "@headlessui/react";
 import { ChevronUpIcon } from "@heroicons/react/20/solid";
 
@@ -120,7 +121,7 @@ const Services = () => {
               >
                 {({ open }) => (
                   <>
-                    <Disclosure.Button className="w-full py-3 mt-2 shadow-md bg-gray-50 dark:bg-gray-900 dark:bg-opacity-70 bg-opacity-70  pl-5 flex justify-between backdrop-blur-sm">
+                    <Disclosure.Button className="z-30 w-full py-3 mt-2 shadow-md bg-gray-50 dark:bg-gray-900 dark:bg-opacity-70 bg-opacity-70  pl-5 flex justify-between backdrop-blur-sm">
                       <div></div>
                       <h1 className="text-xl text-center">
                         {context.siteLanguage === "en"
@@ -133,24 +134,31 @@ const Services = () => {
                         } w-5 h-5 duration-200 mr-4`}
                       />
                     </Disclosure.Button>
-                    <Disclosure.Panel className=" bg-gray-50 dark:bg-gray-900 dark:bg-opacity-40 bg-opacity-40 shadow-md backdrop-blur-sm lg:flex lg:justify-between lg:items-center">
-                      <p className="mb-3 p-4 lg:m-auto lg:w-1/2">
-                        {context.siteLanguage === "en"
-                          ? drone.descriptionEng
-                          : drone.descriptionPL}
-                      </p>
-                      <div className="w-full m-auto lg:w-1/2 lg:m-0">
-                        <iframe
-                          className="m-auto aspect-video w-full h-auto"
-                          width="560"
-                          height="315"
-                          src={drone.videoSrc}
-                          title="YouTube video player"
-                          frameBorder="0"
-                          allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                          allowFullScreen
-                        ></iframe>
-                      </div>
+                    <Disclosure.Panel>
+                      <motion.div
+                        initial={{ opacity: 0, y: -20 }}
+                        animate={{ opacity: 1, y: 0 }}
+                        transition={{ ease: "easeOut", duration: 0.1 }}
+                        className=" bg-gray-50 dark:bg-gray-900 dark:bg-opacity-40 bg-opacity-40 shadow-md backdrop-blur-sm lg:flex lg:justify-between lg:items-center"
+                      >
+                        <p className="mb-3 p-4 lg:m-auto lg:w-1/2">
+                          {context.siteLanguage === "en"
+                            ? drone.descriptionEng
+                            : drone.descriptionPL}
+                        </p>
+                        <div className="w-full m-auto lg:w-1/2 lg:m-0">
+                          <iframe
+                            className="m-auto aspect-video w-full h-auto"
+                            width="560"
+                            height="315"
+                            src={drone.videoSrc}
+                            title="YouTube video player"
+                            frameBorder="0"
+                            allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                            allowFullScreen
+                          ></iframe>
+                        </div>
+                      </motion.div>
                     </Disclosure.Panel>
                   </>
                 )}

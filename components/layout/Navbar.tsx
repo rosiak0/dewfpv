@@ -9,6 +9,7 @@ import ThemeSwitch from "../ui/ThemeSwitch";
 const links = [
   // { href: "/", textEng: "Dew Aerials", textPl: "Dew Aerials" },
   // { href: "/projects", textEng: "Projects", textPl: "Projekty" },
+  { href: "/about", textEng: "About", textPl: "O mnie" },
   { href: "/services", textEng: "Services", textPl: "Usługi" },
   { href: "/contact", textEng: "Contact", textPl: "Kontakt" },
 ];

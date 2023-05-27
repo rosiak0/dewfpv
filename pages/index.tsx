@@ -4,6 +4,7 @@ import { LanguageContext } from "../context/LanguageContext";
 import { useContext } from "react";
 import Link from "next/link";
 import Head from "next/head";
+import About from "./about";
 
 const experience = new Date().getFullYear() - 2017;
 
