@@ -1,6 +1,6 @@
 const ShowReel = () => {
   return (
-    <div className="lg:w-1/2 m-auto lg:p-4">
+    <div className="lg:w-3/5 m-auto lg:p-4">
       {/* <div className="w-full sm:w-3/5 m-auto"> */}
       <h2 className="text-center text-xl mb-5">
         Showreel
